@@ -24,11 +24,12 @@ namespace Dal
             using (ModelBeauty model = new ModelBeauty())
             {
                 staff = model.Staffs.Where(x => x.Login == login && x.Password == passWord).FirstOrDefault();
+                //var tmpstaff = model.Staffs.Where(x => x.Login == login && x.Password == passWord).FirstOrDefault();
+                // staff =  DALConvertation.ConvertStaffToEntity(tmpstaff)
             }
       
             return staff;
         }
-
         /// <summary>
         /// The method gets the list of work positions from Entity
         /// </summary>
