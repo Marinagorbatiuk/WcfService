@@ -213,6 +213,13 @@ namespace BLL
             bllShampoo = Mapper.Map<DTOShampoo, BllShampoo>(dTOShampoo);
             return bllShampoo;
         }
+        public static DTOShampoo ConvertShampooToDTO(BllShampoo bllShampoo)
+        {
+            DTOShampoo dTOShampoo = new DTOShampoo();
+            Mapper.Initialize(x => x.CreateMap<BllShampoo, DTOShampoo>());
+            dTOShampoo = Mapper.Map<BllShampoo, DTOShampoo>(bllShampoo);
+            return dTOShampoo;
+        }
       
     }
 }

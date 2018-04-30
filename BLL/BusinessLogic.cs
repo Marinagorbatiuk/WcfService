@@ -143,11 +143,148 @@ namespace BLL
 
             return bllShadowList;
         }
-        public void DeleteFromGrid(int id)
+        public void DeleteProduct(int id)
         {
             DalFunction function = new DalFunction();
             function.Delete(id);
         }
+        public List<BllStaff> GetEmployees()
+        {
+            DalFunction function = new DalFunction();
+            List<BllStaff> bllStaffs = new List<BllStaff>();
+            bllStaffs = function.GetStaff().Select(x => ConvertationsBLL.ConvertStaffToBll(x)).ToList();
+            return bllStaffs;
+        }
+        public void DeleteEmployee(int id)
+        {
+            DalFunction function = new DalFunction();
+            function.DeleteUser(id);
+        }
 
+        public void AddEmployee(BllStaff bllStaff)
+        {
+            DalFunction function = new DalFunction();
+            function.AddUser(ConvertationsBLL.ConvertStaffToDTO(bllStaff));         
+        }
+        public void AddShampooToDB (BllShampoo bllShampoo)
+        {
+            DalFunction function = new DalFunction();
+            function.AddShampooToDB(ConvertationsBLL.ConvertShampooToDTO(bllShampoo));
+        }
+        public void AddBalsamToDB(BllBalsam bllBalsam )
+        {
+            DalFunction function = new DalFunction();
+            function.AddBalsamToDB(ConvertationsBLL.ConvertBalsamToDTO(bllBalsam));
+        }
+        public void AddColorToDB(BllColor bllColor)
+        {
+            DalFunction function = new DalFunction();
+            function.AddColorToDB(ConvertationsBLL.ConvertColorToDTO(bllColor));
+        }
+        public void AddLaqueToDB(BllLaque bllLaque)
+        {
+            DalFunction function = new DalFunction();
+            function.AddLaqueToDB(ConvertationsBLL.ConvertLaqueToDTO(bllLaque));
+        }
+        public void AddFoundationToDB(BllFoundation bllFoundation)
+        {
+            DalFunction function = new DalFunction();
+            function.AddFoundationToDB(ConvertationsBLL.ConvertFoundationToDTO(bllFoundation));
+        }
+        public void AddLipstickToDB(BllLipstick bllLipstick)
+        {
+            DalFunction function = new DalFunction();
+            function.AddLipstickToDB(ConvertationsBLL.ConvertLipstickToDTO(bllLipstick));
+        }
+        public void AddMascaraToDB (BllMascara bllMascara)
+        {
+            DalFunction function = new DalFunction();
+            function.AddMascaraToDB(ConvertationsBLL.ConvertMascaraToDTO(bllMascara));
+        }
+        public void AddPowderToDB(BllPowder bllPowder)
+        {
+            DalFunction function = new DalFunction();
+            function.AddPowderToDB(ConvertationsBLL.ConvertPowderToDTO(bllPowder));
+        }
+        public void AddShadowToDB(BllShadows bllShadows)
+        {
+            DalFunction function = new DalFunction();
+            function.AddShadowToDB(ConvertationsBLL.ConvertShadowToDTO(bllShadows));
+        }
+        public void AddPolishToDB(BllNailPolish bllNailPolish)
+        {
+            DalFunction function = new DalFunction();
+            function.AddPolishToDB(ConvertationsBLL.ConvertPolishToDTO(bllNailPolish));
+        }
+        public void AddTopToDB(BllNailTop bllNailTop)
+        {
+            DalFunction function = new DalFunction();
+            function.AddTopToDB(ConvertationsBLL.ConvertTopToDTO(bllNailTop));
+        }
+        public void AddBaseToDB( BllNailBase bllNailBase)
+        {
+            DalFunction function = new DalFunction();
+            function.AddBaseToDB(ConvertationsBLL.ConvertBaseToDTO(bllNailBase));
+        }
+        public void UpdateShampoo (BllShampoo bllShampoo)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateShampoo(ConvertationsBLL.ConvertShampooToDTO(bllShampoo));                
+        }
+        public void UpdateBalsam (BllBalsam bllBalsam)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateBalsam(ConvertationsBLL.ConvertBalsamToDTO(bllBalsam));
+        }
+        public void UpdateLaque(BllLaque bllLaque)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateLaque(ConvertationsBLL.ConvertLaqueToDTO(bllLaque));
+        }
+        public void UpdateColor (BllColor bllColor)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateColor(ConvertationsBLL.ConvertColorToDTO(bllColor));
+        }
+        public void UpdateFoundation (BllFoundation bllFoundation)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateFoundation(ConvertationsBLL.ConvertFoundationToDTO(bllFoundation));
+        }
+        public void UpdatePowder (BllPowder bllPowder)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdatePowder(ConvertationsBLL.ConvertPowderToDTO(bllPowder));
+        }
+        public void UpdateShadow (BllShadows bllShadows)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateShadow(ConvertationsBLL.ConvertShadowToDTO(bllShadows));
+        }
+        public void UpdateMascara( BllMascara bllMascara)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateMascara(ConvertationsBLL.ConvertMascaraToDTO(bllMascara));
+        }
+        public void UpdateLipstick( BllLipstick bllLipstick)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateLipstick(ConvertationsBLL.ConvertLipstickToDTO(bllLipstick));
+        }
+        public void UpdateNailBase (BllNailBase bllNailBase)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateBase(ConvertationsBLL.ConvertBaseToDTO(bllNailBase));
+        }
+        public void UpdatePolish (BllNailPolish bllNailPolish)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdatePolish(ConvertationsBLL.ConvertPolishToDTO(bllNailPolish));
+        }
+        public void UpdateTop (BllNailTop bllNailTop)
+        {
+            DalFunction function = new DalFunction();
+            function.UpdateTop(ConvertationsBLL.ConvertTopToDTO(bllNailTop));
+        }
     }
 }

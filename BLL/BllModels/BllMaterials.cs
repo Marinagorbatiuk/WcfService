@@ -11,10 +11,10 @@ namespace BLL
     {
         public int Id { get; set; }
         [Required]
-        [MaxLength(50)]
+       // [MaxLength(50)]
         public string Name { get; set; }
         [Required]
-        [MaxLength(20)]
+        //[MaxLength(20)]
         public string Brand { get; set; }
         [Required]
         public decimal Price { get; set; }
