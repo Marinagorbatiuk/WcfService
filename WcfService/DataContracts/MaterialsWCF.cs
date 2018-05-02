@@ -7,6 +7,7 @@ using System.Web;
 namespace WcfService
 {
     [DataContract]
+    [KnownType(typeof(BalsamWCF))]
     public class MaterialsWCF
     {
         [DataMember]        

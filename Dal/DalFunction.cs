@@ -24,8 +24,6 @@ namespace Dal
             using (ModelBeauty model = new ModelBeauty())
             {
                 staff = model.Staffs.Where(x => x.Login == login && x.Password == passWord).FirstOrDefault();
-                //var tmpstaff = model.Staffs.Where(x => x.Login == login && x.Password == passWord).FirstOrDefault();
-                // staff =  DALConvertation.ConvertStaffToEntity(tmpstaff)
             }
       
             return staff;
@@ -65,134 +63,124 @@ namespace Dal
         /// The method gets list of shampoo from Entity
         /// </summary>
         /// <returns></returns>
-        public List<DTOShampoo> GetShampoo()
+        public List<Shampoo> GetShampoo()
         {
-            List<DTOShampoo> shampoo = new List<DTOShampoo>();
+            List<Shampoo> shampoo = new List<Shampoo>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmpshampo = model.Materials.Where(x => (x is Shampoo)).Select(y => (y as Shampoo)).ToList();
-                shampoo = tmpshampo.Select(x=> DALConvertation.ConvertShampooFromEntityToDTO(x)).ToList();
+                shampoo = model.Materials.Where(x => (x is Shampoo)).Select(y => (y as Shampoo)).ToList();
+               // shampoo = tmpshampo.Select(x=> x).ToList();
             }
 
                 return shampoo;
         }
-        public List<DTOBalsam> GetBalsam()
+        public List<Balsam> GetBalsam()
         {
-            List<DTOBalsam> balsam = new List<DTOBalsam>();
+            List<Balsam> balsam = new List<Balsam>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmpbalsam = model.Materials.Where(x => (x is Balsam)).Select(y => (y as Balsam)).ToList();
-                balsam = tmpbalsam.Select(x => DALConvertation.ConvertBalsamFromEntityToDTO(x)).ToList();
+           balsam = model.Materials.Where(x => (x is Balsam)).Select(y => (y as Balsam)).ToList();
+               
             }
 
             return balsam;
         }
-        public List<DTOColor> GetColor()
+        public List<HairColor> GetColor()
         {
-            List<DTOColor> color = new List<DTOColor>();
+            List<HairColor> color = new List<HairColor>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmpcolor = model.Materials.Where(x => (x is HairColor)).Select(y => (y as HairColor)).ToList();
-                color = tmpcolor.Select(x => DALConvertation.ConvertColorFromEntityToDTO(x)).ToList();
+                color = model.Materials.Where(x => (x is HairColor)).Select(y => (y as HairColor)).ToList();
             }
 
             return color;
         }
-        public List<DTOFoundation> GetFoundation()
+        public List<Foundation> GetFoundation()
         {
-            List<DTOFoundation> foundation = new List<DTOFoundation>();
+            List<Foundation> foundation = new List<Foundation>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmpfoundation = model.Materials.Where(x => (x is Foundation)).Select(y => (y as Foundation)).ToList();
-                foundation = tmpfoundation.Select(x => DALConvertation.ConvertFoundationFromEntityToDTO(x)).ToList();
+              foundation= model.Materials.Where(x => (x is Foundation)).Select(y => (y as Foundation)).ToList();
             }
 
             return foundation;
         }
-        public List<DTOLaque> GetLaque()
+        public List<Laque> GetLaque()
         {
-            List<DTOLaque> laque = new List<DTOLaque>();
+            List<Laque> laque = new List<Laque>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmplaque = model.Materials.Where(x => (x is Laque)).Select(y => (y as Laque)).ToList();
-                laque = tmplaque.Select(x => DALConvertation.ConvertLaqueFromEntityToDTO(x)).ToList();
+                laque= model.Materials.Where(x => (x is Laque)).Select(y => (y as Laque)).ToList();
             }
 
             return laque;
         }
-        public List<DTOLipstick> GetLipstick()
+        public List<Lipstick> GetLipstick()
         {
-            List<DTOLipstick> lipstick = new List<DTOLipstick>();
+            List<Lipstick> lipstick = new List<Lipstick>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmplipstick = model.Materials.Where(x => (x is Lipstick)).Select(y => (y as Lipstick)).ToList();
-                lipstick = tmplipstick.Select(x => DALConvertation.DTOLipstickConvertLipsticFromEntityToDTO(x)).ToList();
+               lipstick = model.Materials.Where(x => (x is Lipstick)).Select(y => (y as Lipstick)).ToList();
             }
 
             return lipstick;
         }
-        public List<DTOMascara> GetMascara()
+        public List<Mascara> GetMascara()
         {
-            List<DTOMascara> mascara = new List<DTOMascara>();
+            List<Mascara> mascara = new List<Mascara>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmpmascaras = model.Materials.Where(x => (x is Mascara)).Select(y => (y as Mascara)).ToList();
-                mascara = tmpmascaras.Select(x => DALConvertation.ConvertMascaraFomEntityToDTO(x)).ToList();
+                mascara = model.Materials.Where(x => (x is Mascara)).Select(y => (y as Mascara)).ToList();
             }
 
             return mascara;
         }
-        public List<DTONailBase> GetNailBase()
+        public List<NailBase> GetNailBase()
         {
-            List<DTONailBase> nailBases = new List<DTONailBase>();
+            List<NailBase> nailBases = new List<NailBase>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmpbase = model.Materials.Where(x => (x is NailBase)).Select(y => (y as NailBase)).ToList();
-                nailBases = tmpbase.Select(x => DALConvertation.ConvertBaseFromEntityToDTO(x)).ToList();
+                nailBases = model.Materials.Where(x => (x is NailBase)).Select(y => (y as NailBase)).ToList();
             }
 
             return nailBases;
         }
-        public List<DTOPolish> GetNailPolish()
+        public List<NailPolish> GetNailPolish()
         {
-            List<DTOPolish> nailPolish = new List<DTOPolish>();
+            List<NailPolish> nailPolish = new List<NailPolish>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmppolish = model.Materials.Where(x => (x is NailPolish)).Select(y => (y as NailPolish)).ToList();
-                nailPolish = tmppolish.Select(x => DALConvertation.ConvertPolishFromEntityToDTO(x)).ToList();
+                nailPolish = model.Materials.Where(x => (x is NailPolish)).Select(y => (y as NailPolish)).ToList();
             }
 
             return nailPolish;
         }
-        public List<DTONailTop> GetNailTop()
+        public List<NailTop> GetNailTop()
         {
-            List<DTONailTop> nailTop = new List<DTONailTop>();
+            List<NailTop> nailTop = new List<NailTop>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmptop = model.Materials.Where(x => (x is NailTop)).Select(y => (y as NailTop)).ToList();
-                nailTop = tmptop.Select(x => DALConvertation.ConvertTopFRomEntityToDTO(x)).ToList();
+                nailTop = model.Materials.Where(x => (x is NailTop)).Select(y => (y as NailTop)).ToList();
             }
 
             return nailTop;
         }
-        public List<DTOPowder> GetPowder()
+        public List<Powder> GetPowder()
         {
-            List<DTOPowder> powder = new List<DTOPowder>();
+            List<Powder> powder = new List<Powder>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmppowder = model.Materials.Where(x => (x is Powder)).Select(y => (y as Powder)).ToList();
-                powder = tmppowder.Select(x => DALConvertation.ConvertPowderFromEntityToDTO(x)).ToList();
+                powder = model.Materials.Where(x => (x is Powder)).Select(y => (y as Powder)).ToList();
             }
 
             return powder;
         }
-        public List<DTOShadows> GetShadow()
+        public List<Shadows> GetShadow()
         {
-            List<DTOShadows> shadows = new List<DTOShadows>();
+            List<Shadows> shadows = new List<Shadows>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmpshadow = model.Materials.Where(x => (x is Shadows)).Select(y => (y as Shadows)).ToList();
-                shadows = tmpshadow.Select(x => DALConvertation.ConvertSadowFromEntityToDTO(x)).ToList();
+                shadows = model.Materials.Where(x => (x is Shadows)).Select(y => (y as Shadows)).ToList();
             }
 
             return shadows;
@@ -205,15 +193,14 @@ namespace Dal
                 model.SaveChanges();
             }
         }
-        public List <DTODallStaff> GetStaff()
+        public List <Staff> GetStaff()
         {
-            List<DTODallStaff> dTODallStaffs = new List<DTODallStaff>();
+            List<Staff> Staffs = new List<Staff>();
             using (ModelBeauty model = new ModelBeauty())
             {
-                var tmpstaff = model.Staffs.Where(x => x.WorkPosition.Name == "Employee").ToList();
-                dTODallStaffs = tmpstaff.Select(x => DALConvertation.ConvertStaffFromEntityToDTO(x)).ToList();
+                Staffs = model.Staffs.Where(x => x.WorkPosition.Name == "Employee").ToList();
             }
-                return dTODallStaffs;
+                return Staffs;
         }
         public void  DeleteUser(int id)
         {
@@ -224,23 +211,23 @@ namespace Dal
             }
         }
 
-        public void AddUser(DTODallStaff dTODallStaff)
+        public void AddUser(Staff dTODallStaff)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Staffs.Add(DALConvertation.ConvertStaffToEntity(dTODallStaff));
+                model.Staffs.Add(dTODallStaff);
                 model.SaveChanges();
             }
         }
 
-        public void AddShampooToDB(DTOShampoo shampoos)
+        public void AddShampooToDB(Shampoo shampoos)
         {
         //    Shampoo shampoos = new Shampoo();
             using (ModelBeauty model = new ModelBeauty())
             {
                 //shampoos = model.Materials.Add(model.Materials.Where(x=>(x is Shampoo)).Select(y=>(y as Shampoo)).First());
                 //shampoos= model.Materials.Add(model.Materials.Where(x => (x is Shampoo)).First());
-                model.Materials.Add(DALConvertation.ConvertShampooToEntity(shampoos));
+                model.Materials.Add(shampoos);
                 
                 model.SaveChanges();
                
@@ -248,193 +235,187 @@ namespace Dal
           // return shampoos;
         }
 
-        public void AddBalsamToDB (DTOBalsam balsam)
+        public void AddBalsamToDB (Balsam balsam)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertBalsamToEntity(balsam));
+                model.Materials.Add(balsam);
                 model.SaveChanges();
             }
         }
-        public void AddColorToDB (DTOColor dTOColor)
+        public void AddColorToDB (HairColor Color)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertColorToEntity(dTOColor));
+                model.Materials.Add(Color);
                 model.SaveChanges();
             }
         }
-        public void AddLaqueToDB (DTOLaque dTOLaque)
+        public void AddLaqueToDB (Laque Laque)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertLaqueToEntity(dTOLaque));
+                model.Materials.Add(Laque);
                 model.SaveChanges();
             }
         }
-        public void AddLipstickToDB(DTOLipstick dTOLipstick)
+        public void AddLipstickToDB(Lipstick Lipstick)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertLipstickToEntity(dTOLipstick));
+                model.Materials.Add(Lipstick);
                 model.SaveChanges();
             }
         }
-        public void AddMascaraToDB(DTOMascara dTOMascara)
+        public void AddMascaraToDB(Mascara Mascara)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertMascaraToEntity(dTOMascara));
+                model.Materials.Add(Mascara);
                 model.SaveChanges();
             }
         }
-        public void AddShadowToDB( DTOShadows dTOShadows )
+        public void AddShadowToDB( Shadows Shadows )
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertShadowToEntity(dTOShadows));
+                model.Materials.Add(Shadows);
                 model.SaveChanges();
             }
         }
-        public void AddFoundationToDB(DTOFoundation dTOFoundation)
+        public void AddFoundationToDB(Foundation Foundation)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertFoundationToEntity(dTOFoundation));
+                model.Materials.Add(Foundation);
                 model.SaveChanges();
             }
         }
-        public void AddPowderToDB(DTOPowder dTOPowder)
+        public void AddPowderToDB(Powder Powder)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertPowderToEntity(dTOPowder));
+                model.Materials.Add(Powder);
                 model.SaveChanges();
             }
         }
-        public void AddPolishToDB(DTOPolish dTOPolish)
+        public void AddPolishToDB(NailPolish Polish)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertPolishToEntity(dTOPolish));
+                model.Materials.Add(Polish);
                 model.SaveChanges();
             }
         }
-        public void AddTopToDB(DTONailTop dTONailTop)
+        public void AddTopToDB(NailTop NailTop)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertTopToEntity(dTONailTop));
+                model.Materials.Add(NailTop);
                 model.SaveChanges();
             }
         }
-        public void AddBaseToDB(DTONailBase dTONailBase)
+        public void AddBaseToDB(NailBase dTONailBase)
         {
             using (ModelBeauty model = new ModelBeauty())
             {
-                model.Materials.Add(DALConvertation.ConvertBaseToEntity(dTONailBase));
+                model.Materials.Add(dTONailBase);
                 model.SaveChanges();
             }
         }
         ModelBeauty model = new ModelBeauty();
-        public void UpdateShampoo(DTOShampoo shampoo)
+        public void UpdateShampoo(Shampoo shampoo)
         {
             Shampoo sh = null;
            // ModelBeauty model = new ModelBeauty();
            sh= (model.Materials.Where(x => x.Id == shampoo.Id).First() as Shampoo);
 
             model.Materials.Attach(sh);
-            sh = DALConvertation.ConvertShampooToEntity(shampoo);//???????????
+           // sh = DALConvertation.ConvertShampooToEntity(shampoo);//???????????
             model.SaveChanges();
         }
 
-        public void UpdateBalsam (DTOBalsam dTOBalsam)
+        public void UpdateBalsam (Balsam dTOBalsam)
         {
             Balsam balsam = null;
             balsam = (model.Materials.Where(x => x.Id == dTOBalsam.Id).First() as Balsam);
             model.Materials.Attach(balsam);
-            balsam = DALConvertation.ConvertBalsamToEntity(dTOBalsam);
             model.SaveChanges();
         }
-        public void UpdateColor (DTOColor dTOColor)
+        public void UpdateColor (HairColor dTOColor)
         {
             HairColor hairColor = null;
             hairColor = (model.Materials.Where(x => x.Id == dTOColor.Id).First() as HairColor);
             model.Materials.Attach(hairColor);
-            hairColor = DALConvertation.ConvertColorToEntity(dTOColor);
             model.SaveChanges();
         }
-        public void UpdateLaque (DTOLaque dTOLaque)
+        public void UpdateLaque (Laque dTOLaque)
         {
             Laque laque = null;
-            laque = (model.Materials.Where(x=>x.Id==dTOLaque.Id).First() as Laque);//?????????? 350
-            model.Materials.Attach(laque);//  344
-            laque = DALConvertation.ConvertLaqueToEntity(dTOLaque);// 343
+            laque = (model.Materials.Where(x=>x.Id==dTOLaque.Id).First() as Laque);
+            model.Materials.Attach(laque);
             model.SaveChanges();
         }
-        public void UpdateMascara(DTOMascara dTOMascara)
+        public void UpdateMascara(Mascara dTOMascara)
         {
             Mascara mascara = null;
             mascara = (model.Materials.Where(x => x.Id == dTOMascara.Id) as Mascara);//??????? 342
             model.Materials.Attach(mascara);
-            mascara = DALConvertation.ConvertMascaraToEntity(dTOMascara);
             model.SaveChanges();
         }
-        public void UpdateLipstick(DTOLipstick dTOLipstick)
+        public void UpdateLipstick(Lipstick dTOLipstick)
         {
             Lipstick lipstick = null;
             lipstick = (model.Materials.Where(x => x.Id == dTOLipstick.Id).First() as Lipstick);
             model.Materials.Attach(lipstick);
-            lipstick = DALConvertation.ConvertLipstickToEntity(dTOLipstick);
             model.SaveChanges();
         }
-        public void UpdateShadow (DTOShadows dTOShadows)
+        public void UpdateShadow (Shadows dTOShadows)
         {
             Shadows shadows = null;
             shadows = (model.Materials.Where(x => x.Id == dTOShadows.Id).First() as Shadows);
             model.Materials.Attach(shadows);
-            shadows = DALConvertation.ConvertShadowToEntity(dTOShadows);
             model.SaveChanges();
         }
-        public void UpdateFoundation (DTOFoundation dTOFoundation)
+        public void UpdateFoundation (Foundation dTOFoundation)
         {
             Foundation foundation = null;
             foundation = (model.Materials.Where(x => x.Id == dTOFoundation.Id).First() as Foundation);
             model.Materials.Attach(foundation);
-            foundation = DALConvertation.ConvertFoundationToEntity(dTOFoundation);
             model.SaveChanges();               
         }
-        public void UpdatePowder (DTOPowder dTOPowder)
+        public void UpdatePowder (Powder dTOPowder)
         {
             Powder powder = null;
             powder = (model.Materials.Where(x => x.Id == dTOPowder.Id).First() as Powder);
             model.Materials.Attach(powder);
-            powder = DALConvertation.ConvertPowderToEntity(dTOPowder);
             model.SaveChanges();
         }
-        public void UpdateTop (DTONailTop dTONailTop)
+        public void UpdateTop (NailTop dTONailTop)
         {
             NailTop nailTop = null;
             nailTop = (model.Materials.Where(x => x.Id == dTONailTop.Id).First() as NailTop);
             model.Materials.Attach(nailTop);
-            nailTop = DALConvertation.ConvertTopToEntity(dTONailTop);
             model.SaveChanges();
         }
-        public void UpdateBase (DTONailBase dTONailBase)
+        public void UpdateBase (NailBase dTONailBase)
         {
             NailBase nailBase = null;
             nailBase = (model.Materials.Where(x => x.Id == dTONailBase.Id).First() as NailBase);
             model.Materials.Attach(nailBase);
-            nailBase = DALConvertation.ConvertBaseToEntity(dTONailBase);
             model.SaveChanges();
         }
-        public void UpdatePolish(DTOPolish dTOPolish)
+        public void UpdatePolish(NailPolish dTOPolish)
         {
             NailPolish nailPolish= null;
             nailPolish = (model.Materials.Where(x => x.Id == dTOPolish.Id).First() as NailPolish);
             model.Materials.Attach(nailPolish);
-            nailPolish = DALConvertation.ConvertPolishToEntity(dTOPolish);
             model.SaveChanges();
+        }
+
+        public List<Service> getServusec()
+        {
+            return model.Services.ToList();
         }
     }
 }

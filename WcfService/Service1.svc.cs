@@ -157,7 +157,7 @@ namespace WcfService
             throw new NotImplementedException();
         }
 
-        public WorkPositionWCF GetUser(string login, string password)
+        public WorkPositionWCF GetUserAutorization(string login, string password)
         {
             throw new NotImplementedException();
         }

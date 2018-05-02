@@ -8,18 +8,31 @@ namespace BLL
 {
     class BusinessLogic
     {
-        public BllWorkPosition GetUser( string login, string password)
+        public BllStaff GetUserAutorization( string login, string password)
         {
-            BllWorkPosition workPosition = null;
-            DalFunction dalFunction = new DalFunction();
+           
+            BllStaff bllStaff = null;
+            DalFunction dalFunction = new DalFunction();          
             Staff staff = dalFunction.GetUser(login, password);
 
             if (staff != null)
             {
-               // workPosition = ConvertationsBLL.ConvertPositionToBll(dalFunction.GetOneWorkPosition(staff.Id));
+                
+                bllStaff = new BllStaff
+                {
+                  Login = staff.Login,
+                  Password = staff.Password,
+                  WorkPosition = new BllWorkPosition
+                  {
+                      Name = staff.WorkPosition.Name,
+                  }
+                };
+
+               //workPosition = ConvertationsBLL.ConvertPositionToBll(dalFunction.GetOneWorkPosition(staff.Id));
             }
-            return workPosition;
+            return bllStaff;
         }
+
 
         public List<BllWorkPosition> GetListPositions()
         {
@@ -47,7 +60,7 @@ namespace BLL
             DalFunction function = new DalFunction();
             List<BllBalsam> bllBalsamList = new List<BllBalsam>();
 
-            bllBalsamList = function.GetBalsam().Select(x => ConvertationsBLL.ConvertBalsamToBll(x)).ToList();
+            //bllBalsamList = function.GetBalsam().Select(x => ConvertationsBLL.ConvertBalsamToBll(x)).ToList();
 
             return bllBalsamList;
         }
@@ -286,5 +299,30 @@ namespace BLL
             DalFunction function = new DalFunction();
             function.UpdateTop(ConvertationsBLL.ConvertTopToDTO(bllNailTop));
         }
+        public List<BllServices> GetListServices ()
+        {
+            DalFunction dalFunction = new DalFunction();
+
+            List<BllServices> getlistServices = new List<BllServices>();
+            List<Service> tmplistServices = dalFunction.getServusec();
+            getlistServices.AddRange(tmplistServices.Select(x => new BllServices
+            {
+                Name = x.Name,
+                Price = x.Price,
+                BllMaterials = new List<BllMaterials> (x.Materials.Select(y=> GetBllMaterials(y)).ToList())
+            }).ToList());
+
+            return getlistServices;
+        }
+        public BllMaterials GetBllMaterials(Material tmpMaterial)
+        {
+            BllMaterials getmaterial = null;
+            if(tmpMaterial is Balsam)
+            {
+                getmaterial = ConvertationsBLL.ConvertBalsamToBll(tmpMaterial as Balsam);
+            }
+            return getmaterial;
+        }
+
     }
 }

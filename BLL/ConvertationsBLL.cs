@@ -5,219 +5,465 @@ using System.Text;
 using System.Threading.Tasks;
 using Dal;
 using AutoMapper;
+
 namespace BLL
 {
     public class ConvertationsBLL
     {
-        public static BllStaff ConvertStaffToBll(DTODallStaff dTODallStaff)
+     public static BllStaff ConvertStaffToBll(Staff dTODallStaff)
+     {
+         BllStaff bllStaff = new BllStaff()
+         {
+             Login= dTODallStaff.Login,
+             Password= dTODallStaff.Password,
+            //WorkPosition = new BllWorkPosition { Name= },
+            //Id = dTODallStaff.Id
+         };
+      
+         return bllStaff;
+     }
+        public static Staff ConvertStaffToDTO(BllStaff bllStaff)
         {
-            BllStaff bllStaff = new BllStaff();
-            Mapper.Initialize(x => x.CreateMap<DTODallStaff, BllStaff>());
-            bllStaff = Mapper.Map<DTODallStaff, BllStaff>(dTODallStaff);
-            return bllStaff;
-        }
-        public static DTODallStaff ConvertStaffToDTO(BllStaff bllStaff)
-        {
-            DTODallStaff dTODallStaff = new DTODallStaff();
-            Mapper.Initialize(x => x.CreateMap<BllStaff, DTODallStaff>());
-            dTODallStaff = Mapper.Map<BllStaff, DTODallStaff>(bllStaff);
+            Staff dTODallStaff = new Staff()
+            { Login= bllStaff.Login,
+            Password=bllStaff.Password,
+            //WorkPosition= bllStaff.WorkPosition
+            };
+            
             return dTODallStaff;
         }
 
-        public static BllWorkPosition ConvertPositionToBll(DTODalWorkPosition dTODalWorkPosition)
+        public static BllWorkPosition ConvertPositionToBll(WorkPosition WorkPosition)
         {
-            BllWorkPosition bllWorkPosition = new BllWorkPosition();
-            Mapper.Initialize(x => x.CreateMap<DTODalWorkPosition, BllWorkPosition>());
-            bllWorkPosition = Mapper.Map<DTODalWorkPosition, BllWorkPosition>(dTODalWorkPosition);
+            BllWorkPosition bllWorkPosition = new BllWorkPosition()
+            {Name= WorkPosition.Name,
+            Id= WorkPosition.Id,
+            //Staff=WorkPosition.Staff
+            };
+    
             return bllWorkPosition;
         }
-        public static DTODalWorkPosition ConvertPositionToDTO(BllWorkPosition bllWorkPosition)
+        public static WorkPosition ConvertPositionToDTO(BllWorkPosition bllWorkPosition)
         {
-            DTODalWorkPosition dTODalWorkPosition = new DTODalWorkPosition();
-            Mapper.Initialize(x => x.CreateMap<BllWorkPosition, DTODalWorkPosition>());
-            dTODalWorkPosition = Mapper.Map<BllWorkPosition, DTODalWorkPosition>(bllWorkPosition);
+            WorkPosition dTODalWorkPosition = new WorkPosition()
+            {
+                Name=bllWorkPosition.Name,
+                Id= bllWorkPosition.Id
+            };
+
+          
             return dTODalWorkPosition;
         }
-        public static BllServices ConvertServicesToBll(DTODalService dTODalService)
+        public static BllServices ConvertServicesToBll(Service dTODalService)
         {
-            BllServices bllServices = new BllServices();
-            Mapper.Initialize(x => x.CreateMap<DTODalService, BllServices>());
-            bllServices = Mapper.Map<DTODalService, BllServices>(dTODalService);
+            BllServices bllServices = new BllServices()
+            {
+                Name=dTODalService.Name,
+                Price= dTODalService.Price,
+                Id=dTODalService.Id,
+                //BllMaterials=dTODalService.Id
+            };
+       
             return bllServices;
         }
-        public static DTODalService ConvertServicesToDTO(BllServices bllServices)
+        public static Service ConvertServicesToDTO(BllServices bllServices)
         {
-            DTODalService dTODalService = new DTODalService();
-            Mapper.Initialize(x => x.CreateMap<BllServices, DTODalService>());
-            dTODalService = Mapper.Map<BllServices, DTODalService>(bllServices);
+            Service dTODalService = new Service()
+            {
+                Name= bllServices.Name,
+                Price= bllServices.Price,
+                Id=bllServices.Id,
+               // Materials=bllServices.BllMaterials
+            };
+      
             return dTODalService;
         }
-        public static BllBalsam ConvertBalsamToBll(DTOBalsam dTOBalsam)
+        public static BllBalsam ConvertBalsamToBll(Balsam Balsam)
         {
-            BllBalsam bllBalsam = new BllBalsam();
-            Mapper.Initialize(x => x.CreateMap<DTOBalsam, BllBalsam>());
-            bllBalsam = Mapper.Map<DTOBalsam, BllBalsam>(dTOBalsam);
+            BllBalsam bllBalsam = new BllBalsam()
+            {
+                Name = Balsam.Name,
+                Brand = Balsam.Brand,
+                Price= Balsam.Price,
+                QuantityBottles= Balsam.QuantityBottles,
+                QuantityGeneralVolume= Balsam.QuantityGeneralVolume,
+                Volume= Balsam.Volume,
+                Id=Balsam.Id,
+                
+            };
+        
             return bllBalsam;
         }
-        public static DTOBalsam ConvertBalsamToDTO(BllBalsam bllBalsam)
+        public static Balsam ConvertBalsamToDTO(BllBalsam bllBalsam)
         {
-            DTOBalsam dTOBalsam = new DTOBalsam();
-            Mapper.Initialize(x => x.CreateMap<BllBalsam, DTOBalsam>());
-            dTOBalsam = Mapper.Map<BllBalsam, DTOBalsam>(bllBalsam);
+            Balsam dTOBalsam = new Balsam()
+            {
+                Name= bllBalsam.Name,
+                Brand = bllBalsam.Brand,
+                Price=bllBalsam.Price,
+                QuantityBottles=bllBalsam.QuantityBottles,
+                QuantityGeneralVolume= bllBalsam.QuantityGeneralVolume,
+                Volume = bllBalsam.Volume,
+                Id= bllBalsam.Id
+            };
+            //Mapper.Initialize(x => x.CreateMap<BllBalsam, DTOBalsam>());
+            //dTOBalsam = Mapper.Map<BllBalsam, DTOBalsam>(bllBalsam);
             return dTOBalsam;
         }
-        public static BllColor ConvertColorToBll(DTOColor dTOColor)
+        public static BllColor ConvertColorToBll(HairColor dTOColor)
         {
-            BllColor bllColor = new BllColor();
-            Mapper.Initialize(x => x.CreateMap<DTOColor, BllColor>());
-            bllColor = Mapper.Map<DTOColor, BllColor>(dTOColor);
+            BllColor bllColor = new BllColor()
+            {Id=dTOColor.Id,
+            Name=dTOColor.Name,
+            Brand=dTOColor.Brand,
+            Price=dTOColor.Price,
+            Color=dTOColor.Color,
+            Volume=dTOColor.Volume,
+            QuantityBottles=dTOColor.QuantityBottles,
+            QuantityGeneralVolume=dTOColor.QuantityGeneralVolume,
+            Description=dTOColor.Description,
+            //BllServices=dTOColor.Service
+            };            
             return bllColor;
         }
-        public static DTOColor ConvertColorToDTO(BllColor bllColor)
+        public static HairColor ConvertColorToDTO(BllColor bllColor)
         {
-            DTOColor dTOColor = new DTOColor();
-            Mapper.Initialize(x => x.CreateMap<BllColor, DTOColor>());
-            dTOColor = Mapper.Map<BllColor, DTOColor>(bllColor);
+            HairColor dTOColor = new HairColor()
+            {
+                Id = bllColor.Id,
+                Name = bllColor.Name,
+                Brand = bllColor.Brand,
+                Price = bllColor.Price,
+                Color = bllColor.Color,
+                Volume = bllColor.Volume,
+                QuantityBottles = bllColor.QuantityBottles,
+                QuantityGeneralVolume = bllColor.QuantityGeneralVolume,
+                Description = bllColor.Description,
+
+            };
+           
             return dTOColor;
         }
-        public static BllFoundation ConvertFoundationToBll(DTOFoundation dTOFoundation)
+        public static BllFoundation ConvertFoundationToBll(Foundation dTOFoundation)
         {
-            BllFoundation bllFoundation = new BllFoundation();
-            Mapper.Initialize(x => x.CreateMap<DTOFoundation, BllFoundation>());
-            bllFoundation = Mapper.Map<DTOFoundation, BllFoundation>(dTOFoundation);
+            BllFoundation bllFoundation = new BllFoundation()
+            {
+                Id = dTOFoundation.Id,
+                Name = dTOFoundation.Name,
+                Brand = dTOFoundation.Brand,
+                Price = dTOFoundation.Price,
+                Color = dTOFoundation.Color,
+                Volume = dTOFoundation.Volume,
+                QuantityBottles = dTOFoundation.QuantityBottles,
+                QuantityGeneralVolume = dTOFoundation.QuantityGeneralVolume,
+                Description = dTOFoundation.Description,
+            };
+         
             return bllFoundation;
         }
-        public static DTOFoundation ConvertFoundationToDTO(BllFoundation bllFoundation)
+        public static Foundation ConvertFoundationToDTO(BllFoundation bllFoundation)
         {
-            DTOFoundation dTOFoundation = new DTOFoundation();
-            Mapper.Initialize(x => x.CreateMap<BllFoundation, DTOFoundation>());
-            dTOFoundation = Mapper.Map<BllFoundation, DTOFoundation>(bllFoundation);
+            Foundation dTOFoundation = new Foundation()
+            {
+                Id = bllFoundation.Id,
+                Name = bllFoundation.Name,
+                Brand = bllFoundation.Brand,
+                Price = bllFoundation.Price,
+                Color = bllFoundation.Color,
+                Volume = bllFoundation.Volume,
+                QuantityBottles = bllFoundation.QuantityBottles,
+                QuantityGeneralVolume = bllFoundation.QuantityGeneralVolume,
+                Description = bllFoundation.Description,
+            };
+
             return dTOFoundation;
         }
-        public static BllLaque ConvertLaqueToBll(DTOLaque dTOLaque)
+        public static BllLaque ConvertLaqueToBll(Laque dTOLaque)
         {
-            BllLaque bllLaque = new BllLaque();
-            Mapper.Initialize(x => x.CreateMap<DTOLaque, BllLaque>());
-            bllLaque = Mapper.Map<DTOLaque, BllLaque>(dTOLaque);
+            BllLaque bllLaque = new BllLaque()
+            {
+                Id = dTOLaque.Id,
+                Name = dTOLaque.Name,
+                Brand = dTOLaque.Brand,
+                Price = dTOLaque.Price,              
+                Volume = dTOLaque.Volume,
+                QuantityBottles = dTOLaque.QuantityBottles,
+                QuantityGeneralVolume = dTOLaque.QuantityGeneralVolume,
+               
+            };
+                    
             return bllLaque;
         }
-        public static DTOLaque ConvertLaqueToDTO(BllLaque bllLaque)
+        public static Laque ConvertLaqueToDTO(BllLaque bllLaque)
         {
-            DTOLaque dTOLaque = new DTOLaque();
-            Mapper.Initialize(x => x.CreateMap<BllLaque, DTOLaque>());
-            dTOLaque = Mapper.Map<BllLaque, DTOLaque>(bllLaque);
+            Laque dTOLaque = new Laque()
+            {
+                Id = bllLaque.Id,
+                Name = bllLaque.Name,
+                Brand = bllLaque.Brand,
+                Price = bllLaque.Price,
+               
+                Volume = bllLaque.Volume,
+                QuantityBottles = bllLaque.QuantityBottles,
+                QuantityGeneralVolume = bllLaque.QuantityGeneralVolume,
+                
+            };
+        
             return dTOLaque;
         }
-        public static BllLipstick ConvertLipstickToBLL(DTOLipstick dTOLipstick)
+        public static BllLipstick ConvertLipstickToBLL(Lipstick dTOLipstick)
         {
-            BllLipstick bllLipstick = new BllLipstick();
-            Mapper.Initialize(x => x.CreateMap<DTOLipstick, BllLipstick>());
-            bllLipstick = Mapper.Map<DTOLipstick, BllLipstick>(dTOLipstick);
+            BllLipstick bllLipstick = new BllLipstick()
+            {
+                Id = dTOLipstick.Id,
+                Name = dTOLipstick.Name,
+                Brand = dTOLipstick.Brand,
+                Price = dTOLipstick.Price,
+                Color = dTOLipstick.Color,
+                Volume = dTOLipstick.Volume,
+                QuantityBottles = dTOLipstick.QuantityBottles,
+                QuantityGeneralVolume = dTOLipstick.QuantityGeneralVolume,
+                Description = dTOLipstick.Description,
+            };
+            
             return bllLipstick;
         }
-        public static DTOLipstick ConvertLipstickToDTO(BllLipstick bllLipstick)
+        public static Lipstick ConvertLipstickToDTO(BllLipstick bllLipstick)
         {
-            DTOLipstick dTOLipstick = new DTOLipstick();
-            Mapper.Initialize(x => x.CreateMap<BllLipstick, DTOLipstick>());
-            dTOLipstick = Mapper.Map<BllLipstick, DTOLipstick>(bllLipstick);
+            Lipstick dTOLipstick = new Lipstick()
+            {
+                Id = bllLipstick.Id,
+                Name = bllLipstick.Name,
+                Brand = bllLipstick.Brand,
+                Price = bllLipstick.Price,
+                Color = bllLipstick.Color,
+                Volume = bllLipstick.Volume,
+                QuantityBottles = bllLipstick.QuantityBottles,
+                QuantityGeneralVolume = bllLipstick.QuantityGeneralVolume,
+                Description = bllLipstick.Description,
+            };          
             return dTOLipstick;
         }
-        public static BllMascara ConvertMascaraToBll(DTOMascara dTOMascara)
+        public static BllMascara ConvertMascaraToBll(Mascara dTOMascara)
         {
-            BllMascara bllMascara = new BllMascara();
-            Mapper.Initialize(x => x.CreateMap<DTOMascara, BllMascara>());
-            bllMascara = Mapper.Map<DTOMascara, BllMascara>(dTOMascara);
+            BllMascara bllMascara = new BllMascara()
+            {
+                Id = dTOMascara.Id,
+                Name = dTOMascara.Name,
+                Brand = dTOMascara.Brand,
+                Price = dTOMascara.Price,
+                Color = dTOMascara.Color,
+                Volume = dTOMascara.Volume,
+                QuantityBottles = dTOMascara.QuantityBottles,
+                QuantityGeneralVolume = dTOMascara.QuantityGeneralVolume,
+                
+            };
+  
             return bllMascara;
         }
-        public static DTOMascara ConvertMascaraToDTO(BllMascara bllMascara)
+        public static Mascara ConvertMascaraToDTO(BllMascara bllMascara)
         {
-            DTOMascara dTOMascara = new DTOMascara();
-            Mapper.Initialize(x => x.CreateMap<BllMascara, DTOMascara>());
-            dTOMascara = Mapper.Map<BllMascara, DTOMascara>(bllMascara);
+            Mascara dTOMascara = new Mascara() {
+                Id = bllMascara.Id,
+                Name = bllMascara.Name,
+                Brand = bllMascara.Brand,
+                Price = bllMascara.Price,
+                Color = bllMascara.Color,
+                Volume = bllMascara.Volume,
+                QuantityBottles = bllMascara.QuantityBottles,
+                QuantityGeneralVolume = bllMascara.QuantityGeneralVolume,
+            };
+            
             return dTOMascara;
         }
-        public static BllNailBase ConvertBaseToBll(DTONailBase dTONailBase)
+        public static BllNailBase ConvertBaseToBll(NailBase dTONailBase)
         {
-            BllNailBase bllNailBase = new BllNailBase();
-            Mapper.Initialize(x => x.CreateMap<DTONailBase, BllNailBase>());
-            bllNailBase = Mapper.Map<DTONailBase, BllNailBase>(dTONailBase);
+            BllNailBase bllNailBase = new BllNailBase()
+            {
+                Id = dTONailBase.Id,
+                Name = dTONailBase.Name,
+                Brand = dTONailBase.Brand,
+                Price = dTONailBase.Price,
+                Volume = dTONailBase.Volume,
+                QuantityBottles = dTONailBase.QuantityBottles,
+                QuantityGeneralVolume = dTONailBase.QuantityGeneralVolume,
+            };
+            
             return bllNailBase;
         }
-        public static DTONailBase ConvertBaseToDTO(BllNailBase bllNailBase)
+        public static NailBase ConvertBaseToDTO(BllNailBase bllNailBase)
         {
-            DTONailBase dTONailBase = new DTONailBase();
-            Mapper.Initialize(x => x.CreateMap<BllNailBase, DTONailBase>());
-            dTONailBase = Mapper.Map<BllNailBase, DTONailBase>(bllNailBase);
+            NailBase dTONailBase = new NailBase()
+            {
+                Id = bllNailBase.Id,
+                Name = bllNailBase.Name,
+                Brand = bllNailBase.Brand,
+                Price = bllNailBase.Price,
+                Volume = bllNailBase.Volume,
+                QuantityBottles = bllNailBase.QuantityBottles,
+                QuantityGeneralVolume = bllNailBase.QuantityGeneralVolume,
+            };
+            
             return dTONailBase;
         }
-        public static BllNailPolish ConvertPolishToBLL(DTOPolish dTOPolish)
+        public static BllNailPolish ConvertPolishToBLL(NailPolish dTOPolish)
         {
-            BllNailPolish bllNailPolish = new BllNailPolish();
-            Mapper.Initialize(x => x.CreateMap<DTOPolish, BllNailPolish>());
-            bllNailPolish = Mapper.Map<DTOPolish, BllNailPolish>(dTOPolish);
+            BllNailPolish bllNailPolish = new BllNailPolish()
+            {
+                Id = dTOPolish.Id,
+                Name = dTOPolish.Name,
+                Brand = dTOPolish.Brand,
+                Price = dTOPolish.Price,
+                Volume = dTOPolish.Volume,
+                QuantityBottles = dTOPolish.QuantityBottles,
+                QuantityGeneralVolume = dTOPolish.QuantityGeneralVolume,
+                Color = dTOPolish.Color
+            };
+      
             return bllNailPolish;
         }
-        public static DTOPolish ConvertPolishToDTO(BllNailPolish bllNailPolish)
+        public static NailPolish ConvertPolishToDTO(BllNailPolish bllNailPolish)
         {
-            DTOPolish dTOPolish = new DTOPolish();
-            Mapper.Initialize(x => x.CreateMap<BllNailPolish, DTOPolish>());
-            dTOPolish = Mapper.Map<BllNailPolish, DTOPolish>(bllNailPolish);
+            NailPolish dTOPolish = new NailPolish()
+            {
+                Id = bllNailPolish.Id,
+                Name = bllNailPolish.Name,
+                Brand = bllNailPolish.Brand,
+                Price = bllNailPolish.Price,
+                Volume = bllNailPolish.Volume,
+                QuantityBottles = bllNailPolish.QuantityBottles,
+                QuantityGeneralVolume = bllNailPolish.QuantityGeneralVolume,
+                Color = bllNailPolish.Color
+            };
+      
             return dTOPolish;
         }
-        public static BllNailTop ConvertTopTOBLL(DTONailTop dTONailTop)
+        public static BllNailTop ConvertTopTOBLL(NailTop dTONailTop)
         {
-            BllNailTop bllNailTop = new BllNailTop();
-            Mapper.Initialize(x => x.CreateMap<DTONailTop, BllNailTop>());
-            bllNailTop = Mapper.Map<DTONailTop, BllNailTop>(dTONailTop);
+            BllNailTop bllNailTop = new BllNailTop()
+            {
+                Id = dTONailTop.Id,
+                Name = dTONailTop.Name,
+                Brand = dTONailTop.Brand,
+                Price = dTONailTop.Price,
+                Volume = dTONailTop.Volume,
+                QuantityBottles = dTONailTop.QuantityBottles,
+                QuantityGeneralVolume = dTONailTop.QuantityGeneralVolume,
+              
+            };
+         
             return bllNailTop;
         }
-        public static DTONailTop ConvertTopToDTO(BllNailTop bllNailTop)
+        public static NailTop ConvertTopToDTO(BllNailTop bllNailTop)
         {
-            DTONailTop dTONailTop = new DTONailTop();
-            Mapper.Initialize(x => x.CreateMap<BllNailTop, DTONailTop>());
-            dTONailTop = Mapper.Map<BllNailTop, DTONailTop>(bllNailTop);
+            NailTop dTONailTop = new NailTop()
+            {
+                Id = bllNailTop.Id,
+                Name = bllNailTop.Name,
+                Brand = bllNailTop.Brand,
+                Price = bllNailTop.Price,
+                Volume = bllNailTop.Volume,
+                QuantityBottles = bllNailTop.QuantityBottles,
+                QuantityGeneralVolume = bllNailTop.QuantityGeneralVolume,
+            };
+            
             return dTONailTop;
         }
-        public static BllPowder ConvertPowderToBll(DTOPowder dTOPowder)
+        public static BllPowder ConvertPowderToBll(Powder dTOPowder)
         {
-            BllPowder bllPowder = new BllPowder();
-            Mapper.Initialize(x => x.CreateMap<DTOPowder, BllPowder>());
-            bllPowder = Mapper.Map<DTOPowder, BllPowder>(dTOPowder);
+            BllPowder bllPowder = new BllPowder()
+            {
+                Id = dTOPowder.Id,
+                Name = dTOPowder.Name,
+                Brand = dTOPowder.Brand,
+                Price = dTOPowder.Price,
+                Volume = dTOPowder.Volume,
+                QuantityBottles = dTOPowder.QuantityBottles,
+                QuantityGeneralVolume = dTOPowder.QuantityGeneralVolume,
+                Color = dTOPowder.Color
+            };
+           
             return bllPowder;
         }
-        public static DTOPowder ConvertPowderToDTO(BllPowder bllPowder)
+        public static Powder ConvertPowderToDTO(BllPowder bllPowder)
         {
-            DTOPowder dTOPowder = new DTOPowder();
-            Mapper.Initialize(x => x.CreateMap<BllPowder, DTOPowder>());
-            dTOPowder = Mapper.Map<BllPowder, DTOPowder>(bllPowder);
+            Powder dTOPowder = new Powder()
+            {
+                Id = bllPowder.Id,
+                Name = bllPowder.Name,
+                Brand = bllPowder.Brand,
+                Price = bllPowder.Price,
+                Volume = bllPowder.Volume,
+                QuantityBottles = bllPowder.QuantityBottles,
+                QuantityGeneralVolume = bllPowder.QuantityGeneralVolume,
+                Color = bllPowder.Color
+            };
+        
             return dTOPowder;
         }
-        public static BllShadows ConvertShadowToBll(DTOShadows dTOShadows)
+        public static BllShadows ConvertShadowToBll(Shadows dTOShadows)
         {
-            BllShadows bllShadows = new BllShadows();
-            Mapper.Initialize(x => x.CreateMap<DTOShadows, BllShadows>());
-            bllShadows = Mapper.Map<DTOShadows, BllShadows>(dTOShadows);
+            BllShadows bllShadows = new BllShadows()
+            {
+                Id = dTOShadows.Id,
+                Name = dTOShadows.Name,
+                Brand = dTOShadows.Brand,
+                Price = dTOShadows.Price,
+                Volume = dTOShadows.Volume,
+                QuantityBottles = dTOShadows.QuantityBottles,
+                QuantityGeneralVolume = dTOShadows.QuantityGeneralVolume,
+                Color = dTOShadows.Color
+            };
+            
             return bllShadows;
         }
-        public static DTOShadows ConvertShadowToDTO(BllShadows bllShadows)
+        public static Shadows ConvertShadowToDTO(BllShadows bllShadows)
         {
-            DTOShadows dTOShadows = new DTOShadows();
-            Mapper.Initialize(x => x.CreateMap<BllShadows, DTOShadows>());
-            dTOShadows = Mapper.Map<BllShadows, DTOShadows>(bllShadows);
+            Shadows dTOShadows = new Shadows()
+            {
+                Id = bllShadows.Id,
+                Name = bllShadows.Name,
+                Brand = bllShadows.Brand,
+                Price = bllShadows.Price,
+                Volume = bllShadows.Volume,
+                QuantityBottles = bllShadows.QuantityBottles,
+                QuantityGeneralVolume = bllShadows.QuantityGeneralVolume,
+                Color = bllShadows.Color,
+               
+            };
+         
             return dTOShadows;
         }
-        public static BllShampoo ConvertShampoToBLL(DTOShampoo dTOShampoo)
+        public static BllShampoo ConvertShampoToBLL(Shampoo dTOShampoo)
         {
-            BllShampoo bllShampoo = new BllShampoo();
-            Mapper.Initialize(x => x.CreateMap<DTOShampoo, BllShampoo>());
-            bllShampoo = Mapper.Map<DTOShampoo, BllShampoo>(dTOShampoo);
+            BllShampoo bllShampoo = new BllShampoo()
+            {
+                Id = dTOShampoo.Id,
+                Name = dTOShampoo.Name,
+                Brand = dTOShampoo.Brand,
+                Price = dTOShampoo.Price,
+                Volume = dTOShampoo.Volume,
+                QuantityBottles = dTOShampoo.QuantityBottles,
+                QuantityGeneralVolume = dTOShampoo.QuantityGeneralVolume,
+               Description = dTOShampoo.Description
+            };
+        
             return bllShampoo;
         }
-        public static DTOShampoo ConvertShampooToDTO(BllShampoo bllShampoo)
+        public static Shampoo ConvertShampooToDTO(BllShampoo bllShampoo)
         {
-            DTOShampoo dTOShampoo = new DTOShampoo();
-            Mapper.Initialize(x => x.CreateMap<BllShampoo, DTOShampoo>());
-            dTOShampoo = Mapper.Map<BllShampoo, DTOShampoo>(bllShampoo);
+            Shampoo dTOShampoo = new Shampoo()
+            {
+                Id = bllShampoo.Id,
+                Name = bllShampoo.Name,
+                Brand = bllShampoo.Brand,
+                Price = bllShampoo.Price,
+                Volume = bllShampoo.Volume,
+                QuantityBottles = bllShampoo.QuantityBottles,
+                QuantityGeneralVolume = bllShampoo.QuantityGeneralVolume,
+                Description = bllShampoo.Description
+            };
+       
             return dTOShampoo;
         }
       

@@ -24,7 +24,8 @@ namespace BLL
         public int QuantityBottles { get; set; }
         [Required]
         public double QuantityGeneralVolume { get; set; }
-        // collection
+     
+        public ICollection<BllServices> BllServices { get; set; }
     }
     public class BllBalsam : BllMaterials
     {

@@ -14,6 +14,6 @@ namespace BLL
         public string Name { get; set; }
         [Required]
         public decimal Price { get; set; }
-        // collection 
+      public ICollection<BllMaterials> BllMaterials { get; set; }
     }
 }

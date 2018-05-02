@@ -53,12 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DALConvertation.cs" />
     <Compile Include="DalFunction.cs" />
-    <Compile Include="DTODallStaff.cs" />
-    <Compile Include="DTODalMaterials.cs" />
-    <Compile Include="DTODalService.cs" />
-    <Compile Include="DTODalWorkPosition.cs" />
     <Compile Include="Models\Material.cs" />
     <Compile Include="Models\ModelBeauty.cs" />
     <Compile Include="Models\MyInitializer.cs" />
