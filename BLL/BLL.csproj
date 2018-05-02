@@ -45,13 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\AddFunctions.cs" />
     <Compile Include="BllModels\BllMaterials.cs" />
     <Compile Include="BllModels\BllServices.cs" />
     <Compile Include="BllModels\BllStaff.cs" />
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="ConvertationsBLL.cs" />
+    <Compile Include="Functions\DeleteFunctions.cs" />
+    <Compile Include="Functions\GetFunctions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BllModels\BllWorkPosition.cs" />
+    <Compile Include="Functions\UpdateFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dal\Dal.csproj">

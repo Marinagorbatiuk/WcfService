@@ -53,7 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\AddFunctionDal.cs" />
     <Compile Include="DalFunction.cs" />
+    <Compile Include="Functions\DeleteFunctionDal.cs" />
+    <Compile Include="Functions\GetFunctionDal.cs" />
     <Compile Include="Models\Material.cs" />
     <Compile Include="Models\ModelBeauty.cs" />
     <Compile Include="Models\MyInitializer.cs" />
@@ -61,10 +64,12 @@
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\WorkPosition.cs" />
+    <Compile Include="Functions\UpdateFunctionDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

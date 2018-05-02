@@ -87,6 +87,11 @@ namespace WcfService
             throw new NotImplementedException();
         }
 
+        public MaterialsWCF GetBllMaterials()
+        {
+            throw new NotImplementedException();
+        }
+
         public StaffWCF[] GetEmployees()
         {
             throw new NotImplementedException();
@@ -159,7 +164,9 @@ namespace WcfService
 
         public WorkPositionWCF GetUserAutorization(string login, string password)
         {
+
             throw new NotImplementedException();
+
         }
 
         public void UpdateBalsam(BalsamWCF balsamWCF)
