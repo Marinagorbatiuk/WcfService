@@ -12,6 +12,11 @@ namespace WcfService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        AddFunctionWCF addFunctionWCF = new AddFunctionWCF();
+        DeleteFunctionWCF deleteFunctionWCF = new DeleteFunctionWCF();
+        GetFunctionWCF getFunctionWCF = new GetFunctionWCF();
+        UpdateFunctionWCF updateFunctionWCF = new UpdateFunctionWCF();
+
         public void AddBalsam(BalsamWCF balsamWCF)
         {
             throw new NotImplementedException();
@@ -87,10 +92,10 @@ namespace WcfService
             throw new NotImplementedException();
         }
 
-        public MaterialsWCF GetBllMaterials()
-        {
-            throw new NotImplementedException();
-        }
+        //public MaterialsWCF GetBllMaterials()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public StaffWCF[] GetEmployees()
         {
@@ -164,9 +169,7 @@ namespace WcfService
 
         public WorkPositionWCF GetUserAutorization(string login, string password)
         {
-
             throw new NotImplementedException();
-
         }
 
         public void UpdateBalsam(BalsamWCF balsamWCF)

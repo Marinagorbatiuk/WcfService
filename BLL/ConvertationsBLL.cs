@@ -25,9 +25,13 @@ namespace BLL
         public static Staff ConvertStaffToDTO(BllStaff bllStaff)
         {
             Staff dTODallStaff = new Staff()
-            { Login= bllStaff.Login,
+            {
+                Login = bllStaff.Login,
             Password=bllStaff.Password,
-            //WorkPosition= bllStaff.WorkPosition
+            WorkPosition= new WorkPosition
+            {
+                Id =bllStaff.WorkPosition.Id
+            }
             };
             
             return dTODallStaff;
@@ -466,6 +470,61 @@ namespace BLL
        
             return dTOShampoo;
         }
-      
+
+        // materials
+        public static BllMaterials ConvertBllMaterials(Material tmpMaterial)//??????????????????
+        {
+            BllMaterials getmaterial = null;
+            if (tmpMaterial is Balsam)
+            {
+                getmaterial = ConvertBalsamToBll(tmpMaterial as Balsam);
+            }
+            else if (tmpMaterial is Shampoo)
+            {
+                getmaterial = ConvertShampoToBLL(tmpMaterial as Shampoo);
+            }
+            else if (tmpMaterial is Laque)
+            {
+                getmaterial = ConvertLaqueToBll(tmpMaterial as Laque);
+            }
+            else if (tmpMaterial is HairColor)
+            {
+                getmaterial = ConvertColorToBll(tmpMaterial as HairColor);
+            }
+            else if (tmpMaterial is Powder)
+            {
+                getmaterial = ConvertPowderToBll(tmpMaterial as Powder);
+            }
+            else if (tmpMaterial is Foundation)
+            {
+                getmaterial = ConvertFoundationToBll(tmpMaterial as Foundation);
+            }
+            else if (tmpMaterial is Mascara)
+            {
+                getmaterial =ConvertMascaraToBll(tmpMaterial as Mascara);
+            }
+            else if (tmpMaterial is Lipstick)
+            {
+                getmaterial = ConvertLipstickToBLL(tmpMaterial as Lipstick);
+            }
+            else if (tmpMaterial is Shadows)
+            {
+                getmaterial = ConvertShadowToBll(tmpMaterial as Shadows);
+            }
+            else if (tmpMaterial is NailBase)
+            {
+                getmaterial = ConvertBaseToBll(tmpMaterial as NailBase);
+            }
+            else if (tmpMaterial is NailTop)
+            {
+                getmaterial =ConvertTopTOBLL(tmpMaterial as NailTop);
+            }
+            else if (tmpMaterial is NailPolish)
+            {
+                getmaterial = ConvertPolishToBLL(tmpMaterial as NailPolish);
+            }
+            return getmaterial;
+        }
+
     }
 }

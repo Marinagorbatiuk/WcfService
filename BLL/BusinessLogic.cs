@@ -8,6 +8,12 @@ namespace BLL
 {
     class BusinessLogic
     {
+        //AddFunctions addFunctions = new AddFunctions();
+        //GetFunctions getFunctions = new GetFunctions();
+        //public BllStaff  getstaf(string login, string password)
+        //{
+        //    return getFunctions.GetUserAutorization(login, password);
+        //}
         //public BllStaff GetUserAutorization(string login, string password)
         //{
 
@@ -161,13 +167,13 @@ namespace BLL
         //    DalFunction function = new DalFunction();
         //    function.Delete(id);
         //}
-      //public List<BllStaff> GetEmployees()
-      //{
-      //    DalFunction function = new DalFunction();
-      //    List<BllStaff> bllStaffs = new List<BllStaff>();
-      //    bllStaffs = function.GetStaff().Select(x => ConvertationsBLL.ConvertStaffToBll(x)).ToList();
-      //    return bllStaffs;
-      //}
+        //public List<BllStaff> GetEmployees()
+        //{
+        //    DalFunction function = new DalFunction();
+        //    List<BllStaff> bllStaffs = new List<BllStaff>();
+        //    bllStaffs = function.GetStaff().Select(x => ConvertationsBLL.ConvertStaffToBll(x)).ToList();
+        //    return bllStaffs;
+        //}
         //public void DeleteEmployee(int id)
         //{
         //    DalFunction function = new DalFunction();
@@ -298,77 +304,77 @@ namespace BLL
         //{
         //    DalFunction function = new DalFunction();
         //    function.UpdateTop(ConvertationsBLL.ConvertTopToDTO(bllNailTop));
-   // }
-    //public List<BllServices> GetListServices ()
-    //{
-    //    DalFunction dalFunction = new DalFunction();
+        // }
+        //public List<BllServices> GetListServices ()
+        //{
+        //    DalFunction dalFunction = new DalFunction();
 
-    //    List<BllServices> getlistServices = new List<BllServices>();
-    //    List<Service> tmplistServices = dalFunction.getServusec();
-    //    getlistServices.AddRange(tmplistServices.Select(x => new BllServices
-    //    {
-    //        Name = x.Name,
-    //        Price = x.Price,
-    //        BllMaterials = new List<BllMaterials> (x.Materials.Select(y=> GetBllMaterials(y)).ToList())
-    //    }).ToList());
+        //    List<BllServices> getlistServices = new List<BllServices>();
+        //    List<Service> tmplistServices = dalFunction.getServusec();
+        //    getlistServices.AddRange(tmplistServices.Select(x => new BllServices
+        //    {
+        //        Name = x.Name,
+        //        Price = x.Price,
+        //        BllMaterials = new List<BllMaterials> (x.Materials.Select(y=> GetBllMaterials(y)).ToList())
+        //    }).ToList());
 
-    //    return getlistServices;
-    //}
-    //public BllMaterials GetBllMaterials(Material tmpMaterial)//??????????????????
-    //{
-    //    BllMaterials getmaterial = null;
-    //    if(tmpMaterial is Balsam)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertBalsamToBll(tmpMaterial as Balsam);
-    //    }
-    //    else if (tmpMaterial is Shampoo)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertShampoToBLL(tmpMaterial as Shampoo);
-    //    }
-    //    else if (tmpMaterial is Laque)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertLaqueToBll(tmpMaterial as Laque);
-    //    }
-    //    else if (tmpMaterial is HairColor)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertColorToBll(tmpMaterial as HairColor);
-    //    }
-    //    else if (tmpMaterial is Powder)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertPowderToBll(tmpMaterial as Powder);
+        //    return getlistServices;
+        //}
+        //public BllMaterials GetBllMaterials(Material tmpMaterial)//??????????????????
+        //{
+        //    BllMaterials getmaterial = null;
+        //    if(tmpMaterial is Balsam)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertBalsamToBll(tmpMaterial as Balsam);
+        //    }
+        //    else if (tmpMaterial is Shampoo)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertShampoToBLL(tmpMaterial as Shampoo);
+        //    }
+        //    else if (tmpMaterial is Laque)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertLaqueToBll(tmpMaterial as Laque);
+        //    }
+        //    else if (tmpMaterial is HairColor)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertColorToBll(tmpMaterial as HairColor);
+        //    }
+        //    else if (tmpMaterial is Powder)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertPowderToBll(tmpMaterial as Powder);
 
-    //    }
-    //    else if (tmpMaterial is Foundation)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertFoundationToBll(tmpMaterial as Foundation);
-    //    }
-    //    else if(tmpMaterial is Mascara)
-    //        {
-    //        getmaterial = ConvertationsBLL.ConvertMascaraToBll(tmpMaterial as Mascara);
-    //    }
-    //    else if (tmpMaterial is Lipstick)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertLipstickToBLL(tmpMaterial as Lipstick);
-    //    }
-    //    else if (tmpMaterial is Shadows)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertShadowToBll(tmpMaterial as Shadows);
-    //    }
-    //    else if (tmpMaterial is NailBase)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertBaseToBll(tmpMaterial as NailBase);
-    //    }
-    //    else if (tmpMaterial is NailTop)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertTopTOBLL(tmpMaterial as NailTop);
-    //    }
-    //    else if (tmpMaterial is NailPolish)
-    //    {
-    //        getmaterial = ConvertationsBLL.ConvertPolishToBLL(tmpMaterial as NailPolish);
-    //    }
-    //    return getmaterial;
-    //}
-}
+        //    }
+        //    else if (tmpMaterial is Foundation)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertFoundationToBll(tmpMaterial as Foundation);
+        //    }
+        //    else if(tmpMaterial is Mascara)
+        //        {
+        //        getmaterial = ConvertationsBLL.ConvertMascaraToBll(tmpMaterial as Mascara);
+        //    }
+        //    else if (tmpMaterial is Lipstick)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertLipstickToBLL(tmpMaterial as Lipstick);
+        //    }
+        //    else if (tmpMaterial is Shadows)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertShadowToBll(tmpMaterial as Shadows);
+        //    }
+        //    else if (tmpMaterial is NailBase)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertBaseToBll(tmpMaterial as NailBase);
+        //    }
+        //    else if (tmpMaterial is NailTop)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertTopTOBLL(tmpMaterial as NailTop);
+        //    }
+        //    else if (tmpMaterial is NailPolish)
+        //    {
+        //        getmaterial = ConvertationsBLL.ConvertPolishToBLL(tmpMaterial as NailPolish);
+        //    }
+        //    return getmaterial;
+        //}
+    }
     
 }
 

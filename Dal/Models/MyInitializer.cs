@@ -516,7 +516,6 @@ namespace Dal
             listfromColoring.AddRange(listProductsColor);
             listfromColoring.AddRange(listProductsBalsam);
             listfromColoring.AddRange(listProductsLaque);
-
             Service hairCut = new Service()
             {
                 Name = "HairCut",
@@ -543,7 +542,6 @@ namespace Dal
             };
             context.Services.AddRange(new List<Service> { hairCut, hairColor, makeUp, manicure });
             context.SaveChanges();
-            
         }
 
 

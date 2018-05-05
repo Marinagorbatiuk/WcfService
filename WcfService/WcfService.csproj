@@ -75,8 +75,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FunctionsWCF\AddFunctionWCF.cs" />
     <Compile Include="ConvertationsWCF.cs" />
     <Compile Include="DataContracts\MaterialsWCF.cs" />
+    <Compile Include="FunctionsWCF\DeleteFunctionWCF.cs" />
+    <Compile Include="FunctionsWCF\GetFunctionWCF.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -85,6 +88,7 @@
     <Compile Include="DataContracts\ServicesWCF.cs" />
     <Compile Include="DataContracts\StaffWCF.cs" />
     <Compile Include="DataContracts\WorkPositionWCF.cs" />
+    <Compile Include="FunctionsWCF\UpdateFunctionWCF.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

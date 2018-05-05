@@ -13,6 +13,6 @@ namespace WcfService
         public string Name { get; set; }
         [DataMember]
         public decimal Price { get; set; }
-        // collection 
+        public ICollection<MaterialsWCF> WCFMaterials { get; set; }
     }
 }

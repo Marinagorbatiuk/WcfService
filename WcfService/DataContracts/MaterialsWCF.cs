@@ -22,7 +22,7 @@ namespace WcfService
         public int QuantityBottles { get; set; }
         [DataMember]
         public double QuantityGeneralVolume { get; set; }
-        // collection
+        public ICollection<ServicesWCF> BllServices { get; set; }
     }
     [DataContract]
     public class BalsamWCF : MaterialsWCF { }
