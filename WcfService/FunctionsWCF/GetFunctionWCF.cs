@@ -24,6 +24,7 @@ namespace WcfService
                         Name = staff.WorkPosition.Name,
                     }
                 };
+                  
             }
             return Staffwcf;
         }

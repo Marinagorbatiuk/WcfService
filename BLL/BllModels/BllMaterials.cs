@@ -11,18 +11,22 @@ namespace BLL
     {
         public int Id { get; set; }
         [Required]
-       // [MaxLength(50)]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Name { get; set; }
         [Required]
-        //[MaxLength(20)]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Brand { get; set; }
         [Required]
+        [Range(1, 1500, ErrorMessage = " was entered incorrectly")]
         public decimal Price { get; set; }
         [Required]
+        [Range(1, 1500, ErrorMessage = " was entered incorrectly")]
         public double Volume { get; set; }
         [Required]
+        [Range(0, 100, ErrorMessage = " was entered incorrectly")]
         public int QuantityBottles { get; set; }
         [Required]
+        [Range(0, 9999999, ErrorMessage = " was entered incorrectly")]
         public double QuantityGeneralVolume { get; set; }
      
         public ICollection<BllServices> BllServices { get; set; }
@@ -32,12 +36,18 @@ namespace BLL
     }
     public class BllColor : BllMaterials
     {
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Description { get; set; }
+        [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Color { get; set; }
     }
     public class BllFoundation : BllMaterials
     {
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Description { get; set; }
+        [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Color { get; set; }
     }
     public class BllLaque : BllMaterials
@@ -45,11 +55,16 @@ namespace BLL
     }
     public class BllLipstick : BllMaterials
     {
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Description { get; set; }
+        [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Color { get; set; }
     }
     public class BllMascara : BllMaterials
     {
+        [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Color { get; set; }
     }
     public class BllNailBase : BllMaterials
@@ -57,6 +72,8 @@ namespace BLL
     }
     public class BllNailPolish : BllMaterials
     {
+        [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Color { get; set; }
     }
     public class BllNailTop : BllMaterials
@@ -64,14 +81,19 @@ namespace BLL
     }
     public class BllPowder : BllMaterials
     {
+        [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Color { get; set; }
     }
     public class BllShadows : BllMaterials
     {
+        [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Color { get; set; }
     }
     public class BllShampoo : BllMaterials
-    {
+    {        
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Description { get; set; }
     }
 }

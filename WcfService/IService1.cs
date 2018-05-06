@@ -13,7 +13,7 @@ namespace WcfService
     public interface IService1
     {
         [OperationContract]
-        WorkPositionWCF GetUserAutorization(string login, string password);
+        StaffWCF GetUserAutorization(string login, string password);
 
         [OperationContract]
         WorkPositionWCF[] GetListPositions();

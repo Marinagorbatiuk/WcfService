@@ -19,77 +19,77 @@ namespace WcfService
 
         public void AddBalsam(BalsamWCF balsamWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddBalsamToDB(balsamWCF);
         }
 
         public void AddBase(NailBaseWCF nailBaseWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddBaseToDB(nailBaseWCF);
         }
 
         public void AddColor(ColorWCF colorWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddColorToDB(colorWCF);
         }
 
         public void AddEmployee(StaffWCF staffWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddEmployee(staffWCF);
         }
 
         public void AddFoundation(FoundationWCF foundationWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddFoundationToDB(foundationWCF);
         }
 
         public void AddLaque(LaqueWCF laqueWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddLaqueToDB(laqueWCF);
         }
 
         public void AddLipstick(LipstickWCF lipstickWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddLipstickToDB(lipstickWCF);
         }
 
         public void AddMascara(MascaraWCF mascaraWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddMascaraToDB(mascaraWCF);
         }
 
         public void AddPolish(NailPolishWCF nailPolishWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddPolishToDB(nailPolishWCF);
         }
 
         public void AddPowder(PowderWCF powderWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddPowderToDB(powderWCF);
         }
 
         public void AddShadow(ShadowsWCF shadowsWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddShadowToDB(shadowsWCF);
         }
 
         public void AddShampoo(ShampooWCF shampooWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddShampooToDB(shampooWCF);
         }
 
         public void AddTop(NailTopWCF nailTopWCF)
         {
-            throw new NotImplementedException();
+            addFunctionWCF.AddTopToDB(nailTopWCF);
         }
 
         public void DeleteEmployee(int id)
         {
-            throw new NotImplementedException();
+            deleteFunctionWCF.DeleteEmployee(id);
         }
 
         public void DeleteProduct(int id)
         {
-            throw new NotImplementedException();
+            deleteFunctionWCF.DeleteProduct(id);
         }
 
         //public MaterialsWCF GetBllMaterials()
@@ -164,72 +164,73 @@ namespace WcfService
 
         public NailTopWCF[] GetListTop()
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            getFunctionWCF.GetListNailTop();
         }
 
-        public WorkPositionWCF GetUserAutorization(string login, string password)
+        public StaffWCF GetUserAutorization(string login, string password)
         {
-            throw new NotImplementedException();
+            getFunctionWCF.GetUserAutorization(login, password);
         }
 
         public void UpdateBalsam(BalsamWCF balsamWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateBalsam(balsamWCF);
         }
 
         public void UpdateBase(NailBaseWCF nailBaseWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateNailBase(nailBaseWCF);
         }
 
         public void UpdateColor(ColorWCF colorWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateColor(colorWCF);
         }
 
         public void UpdateFoundation(FoundationWCF foundationWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateFoundation(foundationWCF);
         }
 
         public void UpdateLaque(LaqueWCF laqueWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateLaque(laqueWCF);
         }
 
         public void UpdateLipstick(LipstickWCF lipstickWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateLipstick(lipstickWCF);
         }
 
         public void UpdateMascara(MascaraWCF mascaraWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateMascara(mascaraWCF);
         }
 
         public void UpdatePolish(NailPolishWCF nailPolishWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdatePolish(nailPolishWCF);
         }
 
         public void UpdatePowder(PowderWCF powderWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdatePowder(powderWCF);
         }
 
         public void UpdateShadow(ShadowsWCF shadowsWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateShadow(shadowsWCF);
         }
 
         public void UpdateShampoo(ShampooWCF shampooWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateShampoo(shampooWCF);
         }
 
         public void UpdateTop(NailTopWCF nailTopWCF)
         {
-            throw new NotImplementedException();
+            updateFunctionWCF.UpdateTop(nailTopWCF);
         }
     }
 }
