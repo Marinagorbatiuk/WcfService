@@ -16,12 +16,29 @@ namespace BLL
          {
              Login= dTODallStaff.Login,
              Password= dTODallStaff.Password,
-            //WorkPosition = new BllWorkPosition { Name= },
-            //Id = dTODallStaff.Id
+            WorkPosition = new BllWorkPosition
+            {
+                Name = dTODallStaff.WorkPosition.Name,
+                Id =dTODallStaff.WorkPosition.Id
+            },
+            Id = dTODallStaff.Id
          };
       
          return bllStaff;
      }
+
+        public static BllStaff ConvertStaffToBllpartial(Staff dTODallStaff)
+        {
+            BllStaff bllStaff = new BllStaff()
+            {
+                Login = dTODallStaff.Login,
+                Password = dTODallStaff.Password,
+               
+                Id = dTODallStaff.Id
+            };
+
+            return bllStaff;
+        }
         public static Staff ConvertStaffToDTO(BllStaff bllStaff)
         {
             Staff dTODallStaff = new Staff()
@@ -30,7 +47,8 @@ namespace BLL
             Password=bllStaff.Password,
             WorkPosition= new WorkPosition
             {
-                Id =bllStaff.WorkPosition.Id
+                Id =bllStaff.WorkPosition.Id,
+                Name= bllStaff.WorkPosition.Name
             }
             };
             
@@ -40,11 +58,26 @@ namespace BLL
         public static BllWorkPosition ConvertPositionToBll(WorkPosition WorkPosition)
         {
             BllWorkPosition bllWorkPosition = new BllWorkPosition()
-            {Name= WorkPosition.Name,
-            Id= WorkPosition.Id,
-            //Staff=WorkPosition.Staff
+            { Name = WorkPosition.Name,
+                Id = WorkPosition.Id,
+                //Staff = WorkPosition.Staff.Select(x => ConvertStaffToBllpartial(x)).ToList()
             };
-    
+            bllWorkPosition.Staff = new List<BllStaff>();
+            foreach(var item in WorkPosition.Staff)
+            {
+                bllWorkPosition.Staff.Add
+                    (
+                    new BllStaff
+                    {
+                        Id =item.Id,
+                        Login = item.Login,
+                        Password = item.Password
+                        
+                    }
+                    );
+            } 
+
+
             return bllWorkPosition;
         }
         public static WorkPosition ConvertPositionToDTO(BllWorkPosition bllWorkPosition)

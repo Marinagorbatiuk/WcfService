@@ -31,7 +31,6 @@ namespace WcfService
 
         public List<WorkPositionWCF> GetListPositions()
         {
-
             List<WorkPositionWCF> positions = new List<WorkPositionWCF>();
             foreach (var item in function.GetListPositions())
             {

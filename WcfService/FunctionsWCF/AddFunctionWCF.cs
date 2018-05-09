@@ -16,7 +16,6 @@ namespace WcfService
         {
             function.AddShampooToDB(ConvertationsWCF.ConvertShampoToBLL(wcfShampoo));
         }
-
         public void AddBalsamToDB(BalsamWCF wcfBalsam)
         {
             function.AddBalsamToDB(ConvertationsWCF.ConvertBalsamToBll(wcfBalsam));

@@ -14,7 +14,8 @@ namespace WcfService
     {
         [OperationContract]
         StaffWCF GetUserAutorization(string login, string password);
-
+        [OperationContract]
+        ServicesWCF[] GetServices();
         [OperationContract]
         WorkPositionWCF[] GetListPositions();
         [OperationContract]

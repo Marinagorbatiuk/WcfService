@@ -92,85 +92,84 @@ namespace WcfService
             deleteFunctionWCF.DeleteProduct(id);
         }
 
-        //public MaterialsWCF GetBllMaterials()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         public StaffWCF[] GetEmployees()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetEmployees().ToArray();
         }
 
         public BalsamWCF[] GetListBalsam()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListBalsam().ToArray();
         }
 
         public NailBaseWCF[] GetListBase()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListNailBase().ToArray();
         }
 
         public ColorWCF[] GetListColor()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListColor().ToArray();
         }
 
         public FoundationWCF[] GetListFoundation()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListFoundation().ToArray();
         }
 
         public LaqueWCF[] GetListLaque()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListLaque().ToArray();
         }
 
         public LipstickWCF[] GetListLipstick()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListLipstick().ToArray();
         }
 
         public MascaraWCF[] GetListMascara()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListMascara().ToArray();
         }
 
         public NailPolishWCF[] GetListPolish()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListNailPolish().ToArray();
         }
 
         public WorkPositionWCF[] GetListPositions()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListPositions().ToArray();
         }
 
         public PowderWCF[] GetListPowder()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListPowder().ToArray();
         }
 
         public ShadowsWCF[] GetListShadow()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListShadow().ToArray();
         }
 
         public ShampooWCF[] GetListShampoo()
         {
-            throw new NotImplementedException();
+            return getFunctionWCF.GetListShampoo().ToArray();
         }
 
         public NailTopWCF[] GetListTop()
+        {           
+           return getFunctionWCF.GetListNailTop().ToArray();
+        }
+
+        public ServicesWCF[] GetServices()
         {
-            // throw new NotImplementedException();
-            getFunctionWCF.GetListNailTop();
+            return getFunctionWCF.GetListServices().ToArray();
         }
 
         public StaffWCF GetUserAutorization(string login, string password)
         {
-            getFunctionWCF.GetUserAutorization(login, password);
+            return getFunctionWCF.GetUserAutorization(login, password);
         }
 
         public void UpdateBalsam(BalsamWCF balsamWCF)

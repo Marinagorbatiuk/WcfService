@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dal;
+using System.ComponentModel.DataAnnotations;
 namespace BLL
 {
    public class AddFunctions
@@ -13,7 +14,17 @@ namespace BLL
         // Employee
         public void AddEmployee(BllStaff bllStaff)
         {
-            function.AddUser(ConvertationsBLL.ConvertStaffToDTO(bllStaff));
+            ValidationContext context = new ValidationContext(bllStaff);
+            List<ValidationResult> result = new List<ValidationResult>();
+            if(Validator.TryValidateObject(bllStaff,context,result,true))
+            {
+                function.AddUser(ConvertationsBLL.ConvertStaffToDTO(bllStaff));
+            }
+            else
+            {
+                //result[0].MemberNames[0]
+            }
+         
         }
         // Types of materials
         public void AddShampooToDB(BllShampoo bllShampoo)

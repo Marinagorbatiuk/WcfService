@@ -7,9 +7,11 @@ using System.Web;
 namespace WcfService
 {
     [DataContract]
-    [KnownType(typeof(BalsamWCF))]
+   // [KnownType(typeof(BalsamWCF))]
     public class MaterialsWCF
     {
+        [DataMember]
+        public int Id { get; set; }
         [DataMember]        
         public string Name { get; set; }
         [DataMember]        
@@ -22,6 +24,7 @@ namespace WcfService
         public int QuantityBottles { get; set; }
         [DataMember]
         public double QuantityGeneralVolume { get; set; }
+        [DataMember]
         public ICollection<ServicesWCF> BllServices { get; set; }
     }
     [DataContract]

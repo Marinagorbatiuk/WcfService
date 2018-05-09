@@ -13,8 +13,10 @@ namespace WcfService
             {
                 Login = dTODallStaff.Login,
                 Password = dTODallStaff.Password,
-                //WorkPosition = new BllWorkPosition { Name= },
-                //Id = dTODallStaff.Id
+                
+                Id = dTODallStaff.Id,
+                WorkPosition = new WorkPositionWCF { Name= dTODallStaff .WorkPosition.Name,
+                                                     Id = dTODallStaff.WorkPosition.Id},
             };
 
             return wcfStaff;
@@ -27,7 +29,7 @@ namespace WcfService
                 Password = wcfStaff.Password,
                 WorkPosition = new BllWorkPosition
                 {
-                  //  Id = wcfStaff.WorkPositionWCF.Id
+                    Id = wcfStaff.WorkPosition.Id,
                     Name = wcfStaff.WorkPosition.Name
                 }
             };
@@ -40,8 +42,8 @@ namespace WcfService
             WorkPositionWCF wcfWorkPosition = new WorkPositionWCF()
             {
                 Name = WorkPosition.Name,
-               // Id = WorkPosition.Id,
-                //Staff=WorkPosition.Staff
+                Id = WorkPosition.Id,
+               
             };
 
             return wcfWorkPosition;
@@ -51,7 +53,7 @@ namespace WcfService
             BllWorkPosition bllWorkPosition = new BllWorkPosition()
             {
                 Name = wcfWorkPosition.Name,
-               // Id = bllWorkPosition.Id
+                Id = wcfWorkPosition.Id
             };
 
 
@@ -63,8 +65,8 @@ namespace WcfService
             {
                 Name = dTODalService.Name,
                 Price = dTODalService.Price,
-               // Id = dTODalService.Id,
-                //BllMaterials=dTODalService.Id
+                Id = dTODalService.Id,
+                //BllMaterials= dTODalService.Id
             };
 
             return bllServices;
@@ -75,8 +77,8 @@ namespace WcfService
             {
                 Name = bllServices.Name,
                 Price = bllServices.Price,
-                //Id = bllServices.Id,
-                // Materials=bllServices.BllMaterials
+                Id = bllServices.Id,
+              //  Materials=bllServices.BllMaterials
             };
 
             return wcfService;
@@ -91,7 +93,7 @@ namespace WcfService
                 QuantityBottles = Balsam.QuantityBottles,
                 QuantityGeneralVolume = Balsam.QuantityGeneralVolume,
                 Volume = Balsam.Volume,
-                //Id = Balsam.Id,
+                Id = Balsam.Id,
 
             };
 
@@ -107,7 +109,7 @@ namespace WcfService
                 QuantityBottles = bllBalsam.QuantityBottles,
                 QuantityGeneralVolume = bllBalsam.QuantityGeneralVolume,
                 Volume = bllBalsam.Volume,
-              //  Id = bllBalsam.Id
+                Id = bllBalsam.Id
             };
             
             return wcfBalsam;
@@ -116,7 +118,7 @@ namespace WcfService
         {
             BllColor bllColor = new BllColor()
             {
-               // Id = dTOColor.Id,
+                Id = wcfColor.Id,
                 Name = wcfColor.Name,
                 Brand = wcfColor.Brand,
                 Price = wcfColor.Price,
@@ -133,7 +135,7 @@ namespace WcfService
         {
             ColorWCF wcfColor = new ColorWCF()
             {
-               // Id = bllColor.Id,
+               Id = bllColor.Id,
                 Name = bllColor.Name,
                 Brand = bllColor.Brand,
                 Price = bllColor.Price,
@@ -151,7 +153,7 @@ namespace WcfService
         {
             BllFoundation bllFoundation = new BllFoundation()
             {
-               // Id = wcfFoundation.Id,
+                Id = wcfFoundation.Id,
                 Name = wcfFoundation.Name,
                 Brand = wcfFoundation.Brand,
                 Price = wcfFoundation.Price,
@@ -168,7 +170,7 @@ namespace WcfService
         {
             FoundationWCF wcfFoundation = new FoundationWCF()
             {
-              //  Id = bllFoundation.Id,
+                Id = bllFoundation.Id,
                 Name = bllFoundation.Name,
                 Brand = bllFoundation.Brand,
                 Price = bllFoundation.Price,
@@ -185,7 +187,7 @@ namespace WcfService
         {
             BllLaque bllLaque = new BllLaque()
             {
-               // Id = wcfLaque.Id,
+               Id = wcfLaque.Id,
                 Name = wcfLaque.Name,
                 Brand = wcfLaque.Brand,
                 Price = wcfLaque.Price,
@@ -201,7 +203,7 @@ namespace WcfService
         {
             LaqueWCF wcfLaque = new LaqueWCF()
             {
-               // Id = bllLaque.Id,
+               Id = bllLaque.Id,
                 Name = bllLaque.Name,
                 Brand = bllLaque.Brand,
                 Price = bllLaque.Price,
@@ -217,7 +219,7 @@ namespace WcfService
         {
             BllLipstick bllLipstick = new BllLipstick()
             {
-                //Id = wcfLipstick.Id,
+                Id = wcfLipstick.Id,
                 Name = wcfLipstick.Name,
                 Brand = wcfLipstick.Brand,
                 Price = wcfLipstick.Price,
@@ -234,7 +236,7 @@ namespace WcfService
         {
             LipstickWCF wcfLipstick = new LipstickWCF()
             {
-                //Id = bllLipstick.Id,
+                Id = bllLipstick.Id,
                 Name = bllLipstick.Name,
                 Brand = bllLipstick.Brand,
                 Price = bllLipstick.Price,
@@ -250,7 +252,7 @@ namespace WcfService
         {
             BllMascara bllMascara = new BllMascara()
             {
-              //  Id = wcfMascara.Id,
+                Id = wcfMascara.Id,
                 Name = wcfMascara.Name,
                 Brand = wcfMascara.Brand,
                 Price = wcfMascara.Price,
@@ -267,7 +269,7 @@ namespace WcfService
         {
             MascaraWCF wcfMascara = new MascaraWCF()
             {
-                //Id = bllMascara.Id,
+                Id = bllMascara.Id,
                 Name = bllMascara.Name,
                 Brand = bllMascara.Brand,
                 Price = bllMascara.Price,
@@ -283,7 +285,7 @@ namespace WcfService
         {
             BllNailBase bllNailBase = new BllNailBase()
             {
-                //Id = dTONailBase.Id,
+                Id = wcfNailBase.Id,
                 Name = wcfNailBase.Name,
                 Brand = wcfNailBase.Brand,
                 Price = wcfNailBase.Price,
@@ -298,7 +300,7 @@ namespace WcfService
         {
             NailBaseWCF wcfNailBase = new NailBaseWCF()
             {
-              //  Id = bllNailBase.Id,
+                Id = bllNailBase.Id,
                 Name = bllNailBase.Name,
                 Brand = bllNailBase.Brand,
                 Price = bllNailBase.Price,
@@ -313,7 +315,7 @@ namespace WcfService
         {
             BllNailPolish bllNailPolish = new BllNailPolish()
             {
-                // Id = wcfPolish.Id,
+                 Id = wcfPolish.Id,
                 Name = wcfPolish.Name,
                 Brand = wcfPolish.Brand,
                 Price = wcfPolish.Price,
@@ -329,7 +331,7 @@ namespace WcfService
         {
             NailPolishWCF wcfPolish = new NailPolishWCF()
             {
-               // Id = bllNailPolish.Id,
+                Id = bllNailPolish.Id,
                 Name = bllNailPolish.Name,
                 Brand = bllNailPolish.Brand,
                 Price = bllNailPolish.Price,
@@ -345,7 +347,7 @@ namespace WcfService
         {
             BllNailTop bllNailTop = new BllNailTop()
             {
-               // Id = wcfNailTop.Id,
+                Id = wcfNailTop.Id,
                 Name = wcfNailTop.Name,
                 Brand = wcfNailTop.Brand,
                 Price = wcfNailTop.Price,
@@ -361,7 +363,7 @@ namespace WcfService
         {
             NailTopWCF wcfNailTop = new NailTopWCF()
             {
-               // Id = bllNailTop.Id,
+                Id = bllNailTop.Id,
                 Name = bllNailTop.Name,
                 Brand = bllNailTop.Brand,
                 Price = bllNailTop.Price,
@@ -376,7 +378,7 @@ namespace WcfService
         {
             BllPowder bllPowder = new BllPowder()
             {
-              //  Id = wcfPowder.Id,
+                Id = wcfPowder.Id,
                 Name = wcfPowder.Name,
                 Brand = wcfPowder.Brand,
                 Price = wcfPowder.Price,
@@ -392,7 +394,7 @@ namespace WcfService
         {
             PowderWCF wcfpowder = new PowderWCF()
             {
-               // Id = bllPowder.Id,
+                Id = bllPowder.Id,
                 Name = bllPowder.Name,
                 Brand = bllPowder.Brand,
                 Price = bllPowder.Price,
@@ -408,7 +410,7 @@ namespace WcfService
         {
             BllShadows bllShadows = new BllShadows()
             {
-             //   Id = dTOShadows.Id,
+                Id = wcfShadows.Id,
                 Name = wcfShadows.Name,
                 Brand = wcfShadows.Brand,
                 Price = wcfShadows.Price,
@@ -424,7 +426,7 @@ namespace WcfService
         {
             ShadowsWCF wcfShadows = new ShadowsWCF()
             {
-                //Id = bllShadows.Id,
+                Id = bllShadows.Id,
                 Name = bllShadows.Name,
                 Brand = bllShadows.Brand,
                 Price = bllShadows.Price,
@@ -441,7 +443,7 @@ namespace WcfService
         {
             BllShampoo bllShampoo = new BllShampoo()
             {
-                //Id = dTOShampoo.Id,
+                Id = wcfShampoo.Id,
                 Name = wcfShampoo.Name,
                 Brand = wcfShampoo.Brand,
                 Price = wcfShampoo.Price,
@@ -457,7 +459,7 @@ namespace WcfService
         {
             ShampooWCF wcfShampoo = new ShampooWCF()
             {
-               // Id = bllShampoo.Id,
+                Id = bllShampoo.Id,
                 Name = bllShampoo.Name,
                 Brand = bllShampoo.Brand,
                 Price = bllShampoo.Price,
@@ -471,7 +473,7 @@ namespace WcfService
         }
 
         // materials
-        public static MaterialsWCF ConvertWcfMaterials(BllMaterials tmpMaterial)//??????????????????
+        public static MaterialsWCF ConvertWcfMaterials(BllMaterials tmpMaterial)
         {
             MaterialsWCF getmaterial = null;
             if (tmpMaterial is BllBalsam)
@@ -498,7 +500,7 @@ namespace WcfService
             {
                 getmaterial = ConvertFoundationTowcf(tmpMaterial as BllFoundation);
             }
-            else if (tmpMaterial is BllFoundation)
+            else if (tmpMaterial is BllMascara)
             {
                 getmaterial = ConvertMascaraToWcf(tmpMaterial as BllMascara);
             }

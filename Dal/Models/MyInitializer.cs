@@ -12,6 +12,7 @@ namespace Dal
         {
             WorkPosition admin = new WorkPosition()
             {
+
                 Name = "Admin",
                 Staff = new List<Staff>()
             };
