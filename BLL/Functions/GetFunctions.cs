@@ -33,7 +33,11 @@ namespace BLL
             return bllStaff;
         }
 
- 
+        public void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id)
+        {
+            function.GetChangedQuantity(QuantityBottles, QuantityGeneralVolume, id);
+        }
+
         public List<BllWorkPosition> GetListPositions()
         {
           

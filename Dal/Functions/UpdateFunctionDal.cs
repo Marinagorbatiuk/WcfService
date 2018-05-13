@@ -12,7 +12,7 @@ namespace Dal
         public void UpdateShampoo(Shampoo shampoo)
         {
             Shampoo shampooEnt = null;
-            shampooEnt = (model.Materials.Where(x => x.Id == shampoo.Id).First() as Shampoo);
+            shampooEnt = (model.Materials.First(x => x.Id == shampoo.Id) as Shampoo);
             model.Materials.Attach(shampooEnt);
             shampooEnt.Brand = shampoo.Brand;
             shampooEnt.Name = shampoo.Name;

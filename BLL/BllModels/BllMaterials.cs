@@ -64,8 +64,7 @@ namespace BLL
         public string Color { get; set; }
     }
     public class BllMascara : BllMaterials
-    {
-        [Required]
+    {  
         [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
         public string Color { get; set; }
     }

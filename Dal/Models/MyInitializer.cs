@@ -21,6 +21,7 @@ namespace Dal
                 Name = "Employee",
                 Staff = new List<Staff>()
             };
+
             //context.WorkPositions.AddRange(new List<WorkPosition> { admin, employee });
            // context.SaveChanges();
 
@@ -34,11 +35,17 @@ namespace Dal
             listStaff.Add(staff);
             staff = new Staff()
             {
+                Login = "3",
+                Password = "3",
+                WorkPosition = employee
+            };
+            listStaff.Add(staff);
+            staff = new Staff()
+            {
                 Login = "2",
                 Password = "2",
                 WorkPosition = employee
             };
-            //context.WorkPositions.AddRange(new List<WorkPosition> { admin, employee });
             listStaff.Add(staff);
             context.Staffs.AddRange(listStaff);
             context.SaveChanges();

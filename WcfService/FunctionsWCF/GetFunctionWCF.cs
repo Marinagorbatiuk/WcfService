@@ -28,7 +28,10 @@ namespace WcfService
             }
             return Staffwcf;
         }
-
+        public void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id)
+        {
+            function.GetChangedQuantity(QuantityBottles, QuantityGeneralVolume, id);
+        }
         public List<WorkPositionWCF> GetListPositions()
         {
             List<WorkPositionWCF> positions = new List<WorkPositionWCF>();

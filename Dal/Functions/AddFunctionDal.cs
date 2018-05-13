@@ -11,13 +11,13 @@ namespace Dal
         ModelBeauty model = new ModelBeauty();
         public void AddUser(Staff dTODallStaff)
         {
-                dTODallStaff.WorkPosition = model.WorkPositions.Single(x=>x.Id== dTODallStaff.WorkPosition.Id);
+                dTODallStaff.WorkPosition = model.WorkPositions.First(x=>x.Name== dTODallStaff.WorkPosition.Name);
                 model.Staffs.Add(dTODallStaff);
                 model.SaveChanges();
         }
         public void AddShampooToDB(Shampoo shampoos)
         {
-                shampoos.Service=model.Materials.Single(x => (x is Shampoo)).Service;
+                shampoos.Service=model.Materials.First(x => (x is Shampoo)).Service;
                 model.Materials.Add(shampoos);
                 model.SaveChanges();
         }

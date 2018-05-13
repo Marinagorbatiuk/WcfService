@@ -74,7 +74,8 @@ namespace WcfService
         void AddBase(NailBaseWCF nailBaseWCF);
         [OperationContract]
         void AddPolish(NailPolishWCF nailPolishWCF);
-
+        [OperationContract]
+        void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id);
         [OperationContract]
         void UpdateShampoo(ShampooWCF shampooWCF);
         [OperationContract]

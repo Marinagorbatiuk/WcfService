@@ -92,6 +92,11 @@ namespace WcfService
             deleteFunctionWCF.DeleteProduct(id);
         }
 
+        public void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id)
+        {
+            getFunctionWCF.GetChangedQuantity( QuantityBottles,QuantityGeneralVolume,id);
+        }
+
         public StaffWCF[] GetEmployees()
         {
             return getFunctionWCF.GetEmployees().ToArray();

@@ -499,8 +499,7 @@ namespace BLL
                 QuantityBottles = bllShampoo.QuantityBottles,
                 QuantityGeneralVolume = bllShampoo.QuantityGeneralVolume,
                 Description = bllShampoo.Description
-            };
-       
+            };    
             return dTOShampoo;
         }
 
