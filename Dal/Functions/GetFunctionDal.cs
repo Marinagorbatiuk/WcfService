@@ -47,9 +47,6 @@ namespace Dal
             List<Balsam> balsam = new List<Balsam>();
           
                 balsam = model.Materials.Where(x => (x is Balsam)).Select(y => (y as Balsam)).ToList();
-
-            
-
             return balsam;
         }
         public List<HairColor> GetColor()
@@ -57,9 +54,7 @@ namespace Dal
             List<HairColor> color = new List<HairColor>();
             
                 color = model.Materials.Where(x => (x is HairColor)).Select(y => (y as HairColor)).ToList();
-            
-
-            return color;
+                return color;
         }
         public List<Foundation> GetFoundation()
         {

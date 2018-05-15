@@ -65,6 +65,7 @@
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\WorkPosition.cs" />
     <Compile Include="Functions\UpdateFunctionDal.cs" />
+    <Compile Include="Models\WriteOffMaterials.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

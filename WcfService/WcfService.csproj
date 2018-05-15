@@ -89,6 +89,7 @@
     <Compile Include="DataContracts\StaffWCF.cs" />
     <Compile Include="DataContracts\WorkPositionWCF.cs" />
     <Compile Include="FunctionsWCF\UpdateFunctionWCF.cs" />
+    <Compile Include="DataContracts\WriteOffMaterialsWCF.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

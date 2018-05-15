@@ -13,7 +13,7 @@ namespace BLL
        
         [Required]
         [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
-        //[RegularExpression(@"^[0-9]{2-50}$")]
+       
         public string Name { get; set; }
         [Required]
         [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = " was entered incorrectly")]
@@ -30,7 +30,8 @@ namespace BLL
         [Required]
         [Range(0, 9999999, ErrorMessage = " was entered incorrectly")]
         public double QuantityGeneralVolume { get; set; }
-     
+        [Required]
+        public double QuntityCount { get; set; }
         public ICollection<BllServices> BllServices { get; set; }
     }
     public class BllBalsam : BllMaterials

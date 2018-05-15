@@ -181,59 +181,6 @@ namespace BLL
             }).ToList());
             return getlistServices;
         }
-        //// materials
-        //public BllMaterials GetBllMaterials(Material tmpMaterial)//??????????????????
-        //{
-        //    BllMaterials getmaterial = null;
-        //    if (tmpMaterial is Balsam)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertBalsamToBll(tmpMaterial as Balsam);
-        //    }
-        //    else if (tmpMaterial is Shampoo)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertShampoToBLL(tmpMaterial as Shampoo);
-        //    }
-        //    else if (tmpMaterial is Laque)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertLaqueToBll(tmpMaterial as Laque);
-        //    }
-        //    else if (tmpMaterial is HairColor)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertColorToBll(tmpMaterial as HairColor);
-        //    }
-        //    else if (tmpMaterial is Powder)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertPowderToBll(tmpMaterial as Powder);
-        //    }
-        //    else if (tmpMaterial is Foundation)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertFoundationToBll(tmpMaterial as Foundation);
-        //    }
-        //    else if (tmpMaterial is Mascara)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertMascaraToBll(tmpMaterial as Mascara);
-        //    }
-        //    else if (tmpMaterial is Lipstick)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertLipstickToBLL(tmpMaterial as Lipstick);
-        //    }
-        //    else if (tmpMaterial is Shadows)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertShadowToBll(tmpMaterial as Shadows);
-        //    }
-        //    else if (tmpMaterial is NailBase)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertBaseToBll(tmpMaterial as NailBase);
-        //    }
-        //    else if (tmpMaterial is NailTop)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertTopTOBLL(tmpMaterial as NailTop);
-        //    }
-        //    else if (tmpMaterial is NailPolish)
-        //    {
-        //        getmaterial = ConvertationsBLL.ConvertPolishToBLL(tmpMaterial as NailPolish);
-        //    }
-        //    return getmaterial;
-        //}
+     
     }
 }

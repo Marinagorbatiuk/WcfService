@@ -59,7 +59,8 @@ namespace Dal
                 Volume = 250,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 250,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount= 5
 
             };
             listProductsShampoo.Add(productShampoo);
@@ -71,8 +72,8 @@ namespace Dal
                 Volume = 250,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 250,
-                Service = new List<Service>()
-
+                Service = new List<Service>(),
+                 QuntityCount = 5
             };
             listProductsShampoo.Add(productShampoo);
             context.Materials.AddRange(listProductsShampoo);
@@ -87,7 +88,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "Red",
                 QuantityGeneralVolume = 60,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 60
             };
             listProductsColor.Add(productColor);
 
@@ -101,7 +103,8 @@ namespace Dal
                 Color = "Chestnut",
                 Description = "for gray hair",
                 QuantityGeneralVolume = 60,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 60
             };
             listProductsColor.Add(productColor);
             productColor = new HairColor()
@@ -114,7 +117,8 @@ namespace Dal
                 Color = "Dark chestnut",
                 Description = "for gray hair",
                 QuantityGeneralVolume = 60,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 60
             };
             listProductsColor.Add(productColor);
             productColor = new HairColor()
@@ -127,7 +131,8 @@ namespace Dal
                 Color = "Light brown",
                 Description = "for gray hair",
                 QuantityGeneralVolume = 60,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 60
             };
             listProductsColor.Add(productColor);
             productColor = new HairColor()
@@ -139,7 +144,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "Golden Brown",
                 QuantityGeneralVolume = 60,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 60
             };
             listProductsColor.Add(productColor);
             productColor = new HairColor()
@@ -151,7 +157,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "Ash Blonde",
                 QuantityGeneralVolume = 60,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 60
             };
             listProductsColor.Add(productColor);
             productColor = new HairColor()
@@ -163,7 +170,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "Honey Blondy",
                 QuantityGeneralVolume = 60,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 60
             };
             listProductsColor.Add(productColor);
             context.Materials.AddRange(listProductsColor);
@@ -177,7 +185,8 @@ namespace Dal
                 Volume = 1000,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 1000,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 5
 
             };
             listProductsBalsam.Add(productBalsam);
@@ -189,7 +198,8 @@ namespace Dal
                 Volume = 200,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 200,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 5
 
             };
             listProductsBalsam.Add(productBalsam);
@@ -201,7 +211,8 @@ namespace Dal
                 Volume = 250,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 250,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 5
 
             };
             listProductsBalsam.Add(productBalsam);
@@ -217,7 +228,8 @@ namespace Dal
                 Volume = 400,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 400,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 5
 
             };
             listProductsLaque.Add(productLaque);
@@ -233,7 +245,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "creamy beige",
                 QuantityGeneralVolume = 35,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.4
 
             };
             listProductsFountation.Add(productFoundation);
@@ -246,7 +259,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "golden natural",
                 QuantityGeneralVolume = 30,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.4
 
             };
             listProductsFountation.Add(productFoundation);
@@ -263,7 +277,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "grisante",
                 QuantityGeneralVolume = 4.7,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
 
             };
             listProductsShadow.Add(productsShadow);
@@ -276,7 +291,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "extra-vertie",
                 QuantityGeneralVolume = 4.7,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
 
             };
             listProductsShadow.Add(productsShadow);
@@ -289,7 +305,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "lunaire",
                 QuantityGeneralVolume = 4.7,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
 
             };
             listProductsShadow.Add(productsShadow);
@@ -302,7 +319,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "emauvante",
                 QuantityGeneralVolume = 4.7,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
 
             };
             listProductsShadow.Add(productsShadow);
@@ -319,7 +337,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "classic passion",
                 QuantityGeneralVolume = 4.2,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
 
             };
             listProductLipstick.Add(productLipstick);
@@ -332,7 +351,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "magnetic coral",
                 QuantityGeneralVolume = 4.2,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
 
             };
             listProductLipstick.Add(productLipstick);
@@ -350,7 +370,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "warm vanilla",
                 QuantityGeneralVolume = 9,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
 
             };
             listProductPowder.Add(productPowder);
@@ -363,7 +384,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "sand beige",
                 QuantityGeneralVolume = 9,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductPowder.Add(productPowder);
             productPowder = new Powder()//powder
@@ -375,7 +397,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "warm sand",
                 QuantityGeneralVolume = 9,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductPowder.Add(productPowder);
             context.Materials.AddRange(listProductPowder);
@@ -390,7 +413,8 @@ namespace Dal
                 Volume = 7.5,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 7.5,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductMascara.Add(productMascara);
             context.Materials.AddRange(listProductMascara);
@@ -405,7 +429,8 @@ namespace Dal
                 Volume = 14,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 14,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
 
             };
             listProductsBase.Add(productBase);
@@ -421,7 +446,8 @@ namespace Dal
                 Volume = 14,
                 QuantityBottles = 1,
                 QuantityGeneralVolume = 14,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductTop.Add(productTop);
             context.Materials.AddRange(listProductTop);
@@ -437,7 +463,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "wild nude",
                 QuantityGeneralVolume = 12,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
             productPolish = new NailPolish()//gelPolish
@@ -449,7 +476,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "marshmallow",
                 QuantityGeneralVolume = 12,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
             productPolish = new NailPolish()//gelPolish
@@ -461,7 +489,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "pink diamond",
                 QuantityGeneralVolume = 12,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
             productPolish = new NailPolish()//gelPolish
@@ -473,7 +502,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "chubby cheeks",
                 QuantityGeneralVolume = 12,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
             productPolish = new NailPolish()//gelPolish
@@ -485,7 +515,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "grenatium",
                 QuantityGeneralVolume = 12,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
             productPolish = new NailPolish()//gelPolish
@@ -497,7 +528,8 @@ namespace Dal
                 QuantityBottles = 1,
                 Color = "amethyst noir",
                 QuantityGeneralVolume = 12,
-                Service = new List<Service>()
+                Service = new List<Service>(),
+                QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
 

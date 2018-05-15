@@ -23,7 +23,9 @@ namespace Dal
         public string Description { get; set; }
         public string Color { get; set; }
         public virtual ICollection<Service> Service { get; set; }
-
+        public virtual ICollection<WriteOffMaterial> WriteOffMaterials { get; set; }
+        [Required]
+        public double QuntityCount { get; set; }
     }
 
     public class Shampoo : Material { }

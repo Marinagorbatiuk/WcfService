@@ -94,6 +94,7 @@ namespace WcfService
                 QuantityGeneralVolume = Balsam.QuantityGeneralVolume,
                 Volume = Balsam.Volume,
                 Id = Balsam.Id,
+                QuntityCount = Balsam.QuntityCount
 
             };
 
@@ -109,7 +110,9 @@ namespace WcfService
                 QuantityBottles = bllBalsam.QuantityBottles,
                 QuantityGeneralVolume = bllBalsam.QuantityGeneralVolume,
                 Volume = bllBalsam.Volume,
-                Id = bllBalsam.Id
+                Id = bllBalsam.Id,
+                QuntityCount = bllBalsam.QuntityCount
+
             };
             
             return wcfBalsam;
@@ -127,7 +130,7 @@ namespace WcfService
                 QuantityBottles = wcfColor.QuantityBottles,
                 QuantityGeneralVolume = wcfColor.QuantityGeneralVolume,
                 Description = wcfColor.Description,
-                //BllServices=dTOColor.Service
+                QuntityCount = wcfColor.QuntityCount
             };
             return bllColor;
         }
@@ -144,6 +147,7 @@ namespace WcfService
                 QuantityBottles = bllColor.QuantityBottles,
                 QuantityGeneralVolume = bllColor.QuantityGeneralVolume,
                 Description = bllColor.Description,
+                QuntityCount = bllColor.QuntityCount
 
             };
 
@@ -162,6 +166,8 @@ namespace WcfService
                 QuantityBottles = wcfFoundation.QuantityBottles,
                 QuantityGeneralVolume = wcfFoundation.QuantityGeneralVolume,
                 Description = wcfFoundation.Description,
+                QuntityCount = wcfFoundation.QuntityCount
+
             };
 
             return bllFoundation;
@@ -179,6 +185,8 @@ namespace WcfService
                 QuantityBottles = bllFoundation.QuantityBottles,
                 QuantityGeneralVolume = bllFoundation.QuantityGeneralVolume,
                 Description = bllFoundation.Description,
+                QuntityCount = bllFoundation.QuntityCount
+
             };
 
             return wcfFoundation;
@@ -194,6 +202,7 @@ namespace WcfService
                 Volume = wcfLaque.Volume,
                 QuantityBottles = wcfLaque.QuantityBottles,
                 QuantityGeneralVolume = wcfLaque.QuantityGeneralVolume,
+                QuntityCount = wcfLaque.QuntityCount
 
             };
 
@@ -210,6 +219,7 @@ namespace WcfService
                 Volume = bllLaque.Volume,
                 QuantityBottles = bllLaque.QuantityBottles,
                 QuantityGeneralVolume = bllLaque.QuantityGeneralVolume,
+                QuntityCount = bllLaque.QuntityCount
 
             };
 
@@ -228,6 +238,8 @@ namespace WcfService
                 QuantityBottles = wcfLipstick.QuantityBottles,
                 QuantityGeneralVolume = wcfLipstick.QuantityGeneralVolume,
                 Description = wcfLipstick.Description,
+                QuntityCount = wcfLipstick.QuntityCount
+
             };
 
             return bllLipstick;
@@ -245,6 +257,8 @@ namespace WcfService
                 QuantityBottles = bllLipstick.QuantityBottles,
                 QuantityGeneralVolume = bllLipstick.QuantityGeneralVolume,
                 Description = bllLipstick.Description,
+                QuntityCount = bllLipstick.QuntityCount
+
             };
             return wcfLipstick;
         }
@@ -260,6 +274,7 @@ namespace WcfService
                 Volume = wcfMascara.Volume,
                 QuantityBottles = wcfMascara.QuantityBottles,
                 QuantityGeneralVolume = wcfMascara.QuantityGeneralVolume,
+                QuntityCount = wcfMascara.QuntityCount
 
             };
 
@@ -277,6 +292,8 @@ namespace WcfService
                 Volume = bllMascara.Volume,
                 QuantityBottles = bllMascara.QuantityBottles,
                 QuantityGeneralVolume = bllMascara.QuantityGeneralVolume,
+                QuntityCount = bllMascara.QuntityCount
+
             };
 
             return wcfMascara;
@@ -292,6 +309,8 @@ namespace WcfService
                 Volume = wcfNailBase.Volume,
                 QuantityBottles = wcfNailBase.QuantityBottles,
                 QuantityGeneralVolume = wcfNailBase.QuantityGeneralVolume,
+                QuntityCount = wcfNailBase.QuntityCount
+
             };
 
             return bllNailBase;
@@ -307,6 +326,8 @@ namespace WcfService
                 Volume = bllNailBase.Volume,
                 QuantityBottles = bllNailBase.QuantityBottles,
                 QuantityGeneralVolume = bllNailBase.QuantityGeneralVolume,
+                QuntityCount = bllNailBase.QuntityCount
+
             };
 
             return wcfNailBase;
@@ -322,7 +343,9 @@ namespace WcfService
                 Volume = wcfPolish.Volume,
                 QuantityBottles = wcfPolish.QuantityBottles,
                 QuantityGeneralVolume = wcfPolish.QuantityGeneralVolume,
-                Color = wcfPolish.Color
+                Color = wcfPolish.Color,
+                QuntityCount = wcfPolish.QuntityCount
+
             };
 
             return bllNailPolish;
@@ -338,7 +361,9 @@ namespace WcfService
                 Volume = bllNailPolish.Volume,
                 QuantityBottles = bllNailPolish.QuantityBottles,
                 QuantityGeneralVolume = bllNailPolish.QuantityGeneralVolume,
-                Color = bllNailPolish.Color
+                Color = bllNailPolish.Color,
+                QuntityCount = bllNailPolish.QuntityCount
+
             };
 
             return wcfPolish;
@@ -354,6 +379,7 @@ namespace WcfService
                 Volume = wcfNailTop.Volume,
                 QuantityBottles = wcfNailTop.QuantityBottles,
                 QuantityGeneralVolume = wcfNailTop.QuantityGeneralVolume,
+                QuntityCount = wcfNailTop.QuntityCount
 
             };
 
@@ -370,6 +396,8 @@ namespace WcfService
                 Volume = bllNailTop.Volume,
                 QuantityBottles = bllNailTop.QuantityBottles,
                 QuantityGeneralVolume = bllNailTop.QuantityGeneralVolume,
+                QuntityCount = bllNailTop.QuntityCount
+
             };
 
             return wcfNailTop;
@@ -385,7 +413,9 @@ namespace WcfService
                 Volume = wcfPowder.Volume,
                 QuantityBottles = wcfPowder.QuantityBottles,
                 QuantityGeneralVolume = wcfPowder.QuantityGeneralVolume,
-                Color = wcfPowder.Color
+                Color = wcfPowder.Color,
+                QuntityCount = wcfPowder.QuntityCount
+
             };
 
             return bllPowder;
@@ -401,7 +431,9 @@ namespace WcfService
                 Volume = bllPowder.Volume,
                 QuantityBottles = bllPowder.QuantityBottles,
                 QuantityGeneralVolume = bllPowder.QuantityGeneralVolume,
-                Color = bllPowder.Color
+                Color = bllPowder.Color,
+                QuntityCount = bllPowder.QuntityCount
+
             };
 
             return wcfpowder;
@@ -417,7 +449,9 @@ namespace WcfService
                 Volume = wcfShadows.Volume,
                 QuantityBottles = wcfShadows.QuantityBottles,
                 QuantityGeneralVolume = wcfShadows.QuantityGeneralVolume,
-                Color = wcfShadows.Color
+                Color = wcfShadows.Color,
+                QuntityCount = wcfShadows.QuntityCount
+
             };
 
             return bllShadows;
@@ -434,6 +468,7 @@ namespace WcfService
                 QuantityBottles = bllShadows.QuantityBottles,
                 QuantityGeneralVolume = bllShadows.QuantityGeneralVolume,
                 Color = bllShadows.Color,
+                QuntityCount = bllShadows.QuntityCount
 
             };
 
@@ -450,7 +485,9 @@ namespace WcfService
                 Volume = wcfShampoo.Volume,
                 QuantityBottles = wcfShampoo.QuantityBottles,
                 QuantityGeneralVolume = wcfShampoo.QuantityGeneralVolume,
-                Description = wcfShampoo.Description
+                Description = wcfShampoo.Description,
+                QuntityCount = wcfShampoo.QuntityCount,
+
             };
 
             return bllShampoo;
@@ -466,7 +503,8 @@ namespace WcfService
                 Volume = bllShampoo.Volume,
                 QuantityBottles = bllShampoo.QuantityBottles,
                 QuantityGeneralVolume = bllShampoo.QuantityGeneralVolume,
-                Description = bllShampoo.Description
+                Description = bllShampoo.Description,
+                QuntityCount = bllShampoo.QuntityCount
             };
 
             return wcfShampoo;
@@ -523,6 +561,70 @@ namespace WcfService
             else if (tmpMaterial is BllNailPolish)
             {
                 getmaterial = ConvertPolishToWcf(tmpMaterial as BllNailPolish);
+            }
+            return getmaterial;
+        }
+
+        public static WriteOffMaterialBll ConvertWriteOffToBD(WriteOffMaterialsWCF writeOffMaterialwcf)
+        {
+            WriteOffMaterialBll writeOffMaterial = new WriteOffMaterialBll()
+            {
+                UsedQuantity = writeOffMaterialwcf.UsedQuantity,
+                Material = ConvertMaterialsToDB(writeOffMaterialwcf.Material)
+            };
+            return writeOffMaterial;
+        }
+
+        public static BllMaterials ConvertMaterialsToDB(MaterialsWCF tmpMaterial)
+        {
+            BllMaterials getmaterial = null;
+            if (tmpMaterial is BalsamWCF)
+            {
+                getmaterial = ConvertBalsamToBll(tmpMaterial as BalsamWCF);
+            }
+            else if (tmpMaterial is ShadowsWCF)
+            {
+                getmaterial = ConvertShadowToBll(tmpMaterial as ShadowsWCF);
+            }
+            else if (tmpMaterial is LaqueWCF)
+            {
+                getmaterial = ConvertLaqueToBll(tmpMaterial as LaqueWCF);
+            }
+            else if (tmpMaterial is ColorWCF)
+            {
+                getmaterial = ConvertColorToBll(tmpMaterial as ColorWCF);
+            }
+            else if (tmpMaterial is PowderWCF)
+            {
+                getmaterial = ConvertPowderToBll(tmpMaterial as PowderWCF);
+            }
+            else if (tmpMaterial is FoundationWCF)
+            {
+                getmaterial = ConvertFoundationToBll(tmpMaterial as FoundationWCF);
+            }
+            else if (tmpMaterial is MascaraWCF)
+            {
+                getmaterial = ConvertMascaraToBll(tmpMaterial as MascaraWCF);
+            }
+            else if (tmpMaterial is LipstickWCF)
+            {
+                getmaterial = ConvertLipstickToBLL(tmpMaterial as LipstickWCF);
+            }
+            else if (tmpMaterial is ShadowsWCF)
+            {
+                getmaterial = ConvertShadowToBll(tmpMaterial as ShadowsWCF);
+            }
+            else if (tmpMaterial is NailBaseWCF)
+            {
+                getmaterial = ConvertBaseToBll(tmpMaterial as NailBaseWCF);
+            }
+            else if (tmpMaterial is NailTopWCF)
+            {
+                getmaterial = ConvertTopTOBLL(tmpMaterial as NailTopWCF);
+            }
+            else if (tmpMaterial is NailPolishWCF)
+            {
+                getmaterial = ConvertPolishToBLL(tmpMaterial as NailPolishWCF);
             }
             return getmaterial;
         }

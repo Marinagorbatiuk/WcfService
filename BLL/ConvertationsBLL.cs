@@ -60,7 +60,6 @@ namespace BLL
             BllWorkPosition bllWorkPosition = new BllWorkPosition()
             { Name = WorkPosition.Name,
                 Id = WorkPosition.Id,
-                //Staff = WorkPosition.Staff.Select(x => ConvertStaffToBllpartial(x)).ToList()
             };
             bllWorkPosition.Staff = new List<BllStaff>();
             foreach(var item in WorkPosition.Staff)
@@ -71,15 +70,22 @@ namespace BLL
                     {
                         Id =item.Id,
                         Login = item.Login,
-                        Password = item.Password
-                        
+                        Password = item.Password                        
                     }
                     );
             } 
-
-
             return bllWorkPosition;
         }
+        public static WriteOffMaterial ConvertWriteOffToBD(WriteOffMaterialBll writeOffMaterialBll)
+        {
+           WriteOffMaterial writeOffMaterial = new WriteOffMaterial()
+            {
+                UsedQuantity= writeOffMaterialBll.UsedQuantity,
+                Material = ConvertMaterialsToDB(writeOffMaterialBll.Material)
+            };
+            return writeOffMaterial;
+        }
+
         public static WorkPosition ConvertPositionToDTO(BllWorkPosition bllWorkPosition)
         {
             WorkPosition dTODalWorkPosition = new WorkPosition()
@@ -126,7 +132,7 @@ namespace BLL
                 QuantityGeneralVolume= Balsam.QuantityGeneralVolume,
                 Volume= Balsam.Volume,
                 Id=Balsam.Id,
-                
+                QuntityCount = Balsam.QuntityCount
             };
         
             return bllBalsam;
@@ -141,10 +147,10 @@ namespace BLL
                 QuantityBottles=bllBalsam.QuantityBottles,
                 QuantityGeneralVolume= bllBalsam.QuantityGeneralVolume,
                 Volume = bllBalsam.Volume,
-                Id= bllBalsam.Id
+                Id= bllBalsam.Id,
+                QuntityCount= bllBalsam.QuntityCount
             };
-            //Mapper.Initialize(x => x.CreateMap<BllBalsam, DTOBalsam>());
-            //dTOBalsam = Mapper.Map<BllBalsam, DTOBalsam>(bllBalsam);
+        
             return dTOBalsam;
         }
         public static BllColor ConvertColorToBll(HairColor dTOColor)
@@ -159,7 +165,7 @@ namespace BLL
             QuantityBottles=dTOColor.QuantityBottles,
             QuantityGeneralVolume=dTOColor.QuantityGeneralVolume,
             Description=dTOColor.Description,
-            //BllServices=dTOColor.Service
+            QuntityCount= dTOColor.QuntityCount
             };            
             return bllColor;
         }
@@ -176,7 +182,7 @@ namespace BLL
                 QuantityBottles = bllColor.QuantityBottles,
                 QuantityGeneralVolume = bllColor.QuantityGeneralVolume,
                 Description = bllColor.Description,
-
+                QuntityCount= bllColor.QuntityCount
             };
            
             return dTOColor;
@@ -194,6 +200,7 @@ namespace BLL
                 QuantityBottles = dTOFoundation.QuantityBottles,
                 QuantityGeneralVolume = dTOFoundation.QuantityGeneralVolume,
                 Description = dTOFoundation.Description,
+                QuntityCount= dTOFoundation.QuntityCount
             };
          
             return bllFoundation;
@@ -211,6 +218,7 @@ namespace BLL
                 QuantityBottles = bllFoundation.QuantityBottles,
                 QuantityGeneralVolume = bllFoundation.QuantityGeneralVolume,
                 Description = bllFoundation.Description,
+                QuntityCount = bllFoundation.QuntityCount
             };
 
             return dTOFoundation;
@@ -226,7 +234,7 @@ namespace BLL
                 Volume = dTOLaque.Volume,
                 QuantityBottles = dTOLaque.QuantityBottles,
                 QuantityGeneralVolume = dTOLaque.QuantityGeneralVolume,
-               
+               QuntityCount= dTOLaque.QuntityCount
             };
                     
             return bllLaque;
@@ -238,12 +246,11 @@ namespace BLL
                 Id = bllLaque.Id,
                 Name = bllLaque.Name,
                 Brand = bllLaque.Brand,
-                Price = bllLaque.Price,
-               
+                Price = bllLaque.Price,              
                 Volume = bllLaque.Volume,
                 QuantityBottles = bllLaque.QuantityBottles,
                 QuantityGeneralVolume = bllLaque.QuantityGeneralVolume,
-                
+                QuntityCount = bllLaque.QuntityCount
             };
         
             return dTOLaque;
@@ -261,6 +268,7 @@ namespace BLL
                 QuantityBottles = dTOLipstick.QuantityBottles,
                 QuantityGeneralVolume = dTOLipstick.QuantityGeneralVolume,
                 Description = dTOLipstick.Description,
+                QuntityCount = dTOLipstick.QuntityCount
             };
             
             return bllLipstick;
@@ -278,6 +286,7 @@ namespace BLL
                 QuantityBottles = bllLipstick.QuantityBottles,
                 QuantityGeneralVolume = bllLipstick.QuantityGeneralVolume,
                 Description = bllLipstick.Description,
+                QuntityCount = bllLipstick.QuntityCount
             };          
             return dTOLipstick;
         }
@@ -293,7 +302,7 @@ namespace BLL
                 Volume = dTOMascara.Volume,
                 QuantityBottles = dTOMascara.QuantityBottles,
                 QuantityGeneralVolume = dTOMascara.QuantityGeneralVolume,
-                
+                QuntityCount = dTOMascara.QuntityCount
             };
   
             return bllMascara;
@@ -309,6 +318,7 @@ namespace BLL
                 Volume = bllMascara.Volume,
                 QuantityBottles = bllMascara.QuantityBottles,
                 QuantityGeneralVolume = bllMascara.QuantityGeneralVolume,
+                QuntityCount = bllMascara.QuntityCount
             };
             
             return dTOMascara;
@@ -324,6 +334,7 @@ namespace BLL
                 Volume = dTONailBase.Volume,
                 QuantityBottles = dTONailBase.QuantityBottles,
                 QuantityGeneralVolume = dTONailBase.QuantityGeneralVolume,
+                QuntityCount = dTONailBase.QuntityCount
             };
             
             return bllNailBase;
@@ -339,6 +350,7 @@ namespace BLL
                 Volume = bllNailBase.Volume,
                 QuantityBottles = bllNailBase.QuantityBottles,
                 QuantityGeneralVolume = bllNailBase.QuantityGeneralVolume,
+                QuntityCount = bllNailBase.QuntityCount
             };
             
             return dTONailBase;
@@ -354,7 +366,8 @@ namespace BLL
                 Volume = dTOPolish.Volume,
                 QuantityBottles = dTOPolish.QuantityBottles,
                 QuantityGeneralVolume = dTOPolish.QuantityGeneralVolume,
-                Color = dTOPolish.Color
+                Color = dTOPolish.Color,
+                QuntityCount= dTOPolish.QuntityCount
             };
       
             return bllNailPolish;
@@ -370,7 +383,8 @@ namespace BLL
                 Volume = bllNailPolish.Volume,
                 QuantityBottles = bllNailPolish.QuantityBottles,
                 QuantityGeneralVolume = bllNailPolish.QuantityGeneralVolume,
-                Color = bllNailPolish.Color
+                Color = bllNailPolish.Color,
+                QuntityCount = bllNailPolish.QuntityCount
             };
       
             return dTOPolish;
@@ -386,7 +400,7 @@ namespace BLL
                 Volume = dTONailTop.Volume,
                 QuantityBottles = dTONailTop.QuantityBottles,
                 QuantityGeneralVolume = dTONailTop.QuantityGeneralVolume,
-              
+              QuntityCount = dTONailTop.QuntityCount
             };
          
             return bllNailTop;
@@ -402,6 +416,7 @@ namespace BLL
                 Volume = bllNailTop.Volume,
                 QuantityBottles = bllNailTop.QuantityBottles,
                 QuantityGeneralVolume = bllNailTop.QuantityGeneralVolume,
+                QuntityCount = bllNailTop.QuntityCount
             };
             
             return dTONailTop;
@@ -417,7 +432,8 @@ namespace BLL
                 Volume = dTOPowder.Volume,
                 QuantityBottles = dTOPowder.QuantityBottles,
                 QuantityGeneralVolume = dTOPowder.QuantityGeneralVolume,
-                Color = dTOPowder.Color
+                Color = dTOPowder.Color,
+                QuntityCount = dTOPowder.QuntityCount
             };
            
             return bllPowder;
@@ -433,7 +449,8 @@ namespace BLL
                 Volume = bllPowder.Volume,
                 QuantityBottles = bllPowder.QuantityBottles,
                 QuantityGeneralVolume = bllPowder.QuantityGeneralVolume,
-                Color = bllPowder.Color
+                Color = bllPowder.Color,
+                QuntityCount = bllPowder.QuntityCount
             };
         
             return dTOPowder;
@@ -449,7 +466,8 @@ namespace BLL
                 Volume = dTOShadows.Volume,
                 QuantityBottles = dTOShadows.QuantityBottles,
                 QuantityGeneralVolume = dTOShadows.QuantityGeneralVolume,
-                Color = dTOShadows.Color
+                Color = dTOShadows.Color,
+                QuntityCount = dTOShadows.QuntityCount
             };
             
             return bllShadows;
@@ -466,7 +484,7 @@ namespace BLL
                 QuantityBottles = bllShadows.QuantityBottles,
                 QuantityGeneralVolume = bllShadows.QuantityGeneralVolume,
                 Color = bllShadows.Color,
-               
+               QuntityCount = bllShadows.QuntityCount
             };
          
             return dTOShadows;
@@ -482,7 +500,8 @@ namespace BLL
                 Volume = dTOShampoo.Volume,
                 QuantityBottles = dTOShampoo.QuantityBottles,
                 QuantityGeneralVolume = dTOShampoo.QuantityGeneralVolume,
-               Description = dTOShampoo.Description
+               Description = dTOShampoo.Description,
+               QuntityCount = dTOShampoo.QuntityCount
             };
         
             return bllShampoo;
@@ -498,13 +517,14 @@ namespace BLL
                 Volume = bllShampoo.Volume,
                 QuantityBottles = bllShampoo.QuantityBottles,
                 QuantityGeneralVolume = bllShampoo.QuantityGeneralVolume,
-                Description = bllShampoo.Description
+                Description = bllShampoo.Description,
+                QuntityCount = bllShampoo.QuntityCount
             };    
             return dTOShampoo;
         }
 
         // materials
-        public static BllMaterials ConvertBllMaterials(Material tmpMaterial)//??????????????????
+        public static BllMaterials ConvertBllMaterials(Material tmpMaterial)
         {
             BllMaterials getmaterial = null;
             if (tmpMaterial is Balsam)
@@ -554,6 +574,60 @@ namespace BLL
             else if (tmpMaterial is NailPolish)
             {
                 getmaterial = ConvertPolishToBLL(tmpMaterial as NailPolish);
+            }
+            return getmaterial;
+        }
+
+        public static Material ConvertMaterialsToDB(BllMaterials tmpMaterial)
+        {
+            Material getmaterial = null;
+            if (tmpMaterial is BllBalsam)
+            {
+                getmaterial = ConvertBalsamToDTO(tmpMaterial as BllBalsam);
+            }
+            else if (tmpMaterial is BllShampoo)
+            {
+                getmaterial = ConvertShampooToDTO(tmpMaterial as BllShampoo);
+            }
+            else if (tmpMaterial is BllLaque)
+            {
+                getmaterial = ConvertLaqueToDTO(tmpMaterial as BllLaque);
+            }
+            else if (tmpMaterial is BllColor)
+            {
+                getmaterial = ConvertColorToDTO(tmpMaterial as BllColor);
+            }
+            else if (tmpMaterial is BllPowder)
+            {
+                getmaterial = ConvertPowderToDTO(tmpMaterial as BllPowder);
+            }
+            else if (tmpMaterial is BllFoundation)
+            {
+                getmaterial = ConvertFoundationToDTO(tmpMaterial as BllFoundation);
+            }
+            else if (tmpMaterial is BllMascara)
+            {
+                getmaterial = ConvertMascaraToDTO(tmpMaterial as BllMascara);
+            }
+            else if (tmpMaterial is BllLipstick)
+            {
+                getmaterial = ConvertLipstickToDTO(tmpMaterial as BllLipstick);
+            }
+            else if (tmpMaterial is BllShadows)
+            {
+                getmaterial = ConvertShadowToDTO(tmpMaterial as BllShadows);
+            }
+            else if (tmpMaterial is BllNailBase)
+            {
+                getmaterial = ConvertBaseToDTO(tmpMaterial as BllNailBase);
+            }
+            else if (tmpMaterial is BllNailTop)
+            {
+                getmaterial = ConvertTopToDTO(tmpMaterial as BllNailTop);
+            }
+            else if (tmpMaterial is BllNailPolish)
+            {
+                getmaterial = ConvertPolishToDTO(tmpMaterial as BllNailPolish);
             }
             return getmaterial;
         }

@@ -12,6 +12,10 @@ namespace WcfService
         {
             function.AddEmployee(ConvertationsWCF.ConvertStaffToBll(wcfStaff));
         }
+        public List<string> WritingOff(List<WriteOffMaterialsWCF> writeOffMaterials)
+        {
+            return function.WritingOff(writeOffMaterials.Select(x => ConvertationsWCF.ConvertWriteOffToBD(x)).ToList());
+        }
         public void AddShampooToDB(ShampooWCF wcfShampoo)
         {
             function.AddShampooToDB(ConvertationsWCF.ConvertShampoToBLL(wcfShampoo));

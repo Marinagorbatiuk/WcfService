@@ -26,7 +26,23 @@ namespace BLL
             }
          
         }
-        // Types of materials
+
+        //public List<string> WritingOff(List<WriteOffMaterialBll> writeOffMaterials)
+        //{
+        //    function.WritingOff(ConvertationsBLL.ConvertWriteOffToBD(writeOffMaterials));
+
+        //}
+
+        public List<string> WritingOff(List<WriteOffMaterialBll> writeOffMaterials)
+        {
+            //List<string> newlist = new List<string>();
+            //List<WriteOffMaterial> WriteoffMaterials = writeOffMaterials.Select(x => ConvertationsBLL.ConvertWriteOffToBD(x)).ToList();
+            //newlist = function.WritingOff(WriteoffMaterials);
+            //return newlist;
+
+            return function.WritingOff(writeOffMaterials.Select(x => ConvertationsBLL.ConvertWriteOffToBD(x)).ToList());
+        }
+
         public void AddShampooToDB(BllShampoo bllShampoo)
         {
             function.AddShampooToDB(ConvertationsBLL.ConvertShampooToDTO(bllShampoo));

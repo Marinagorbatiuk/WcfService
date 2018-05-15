@@ -56,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BllModels\BllWorkPosition.cs" />
     <Compile Include="Functions\UpdateFunctions.cs" />
+    <Compile Include="BllModels\WriteOffMaterialBll.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dal\Dal.csproj">

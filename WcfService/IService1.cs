@@ -15,6 +15,8 @@ namespace WcfService
         [OperationContract]
         StaffWCF GetUserAutorization(string login, string password);
         [OperationContract]
+        string[] WritingOff(List<WriteOffMaterialsWCF> writeOffMaterials);
+        [OperationContract]
         ServicesWCF[] GetServices();
         [OperationContract]
         WorkPositionWCF[] GetListPositions();
@@ -100,8 +102,7 @@ namespace WcfService
         void UpdateBase(NailBaseWCF nailBaseWCF);
         [OperationContract]
         void UpdatePolish(NailPolishWCF nailPolishWCF);
-        //?????????????????????????????????????????????????????????????????????
-        //[OperationContract]
-        //MaterialsWCF GetBllMaterials();
+        
+        
     }
 }
