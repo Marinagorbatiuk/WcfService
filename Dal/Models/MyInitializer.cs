@@ -22,9 +22,6 @@ namespace Dal
                 Staff = new List<Staff>()
             };
 
-            //context.WorkPositions.AddRange(new List<WorkPosition> { admin, employee });
-           // context.SaveChanges();
-
             List<Staff> listStaff = new List<Staff>();
             Staff staff = new Staff()
             {
@@ -51,7 +48,7 @@ namespace Dal
             context.SaveChanges();
 
             List<Material> listProductsShampoo = new List<Material>();
-            Shampoo productShampoo = new Shampoo()//shampoo
+            Shampoo productShampoo = new Shampoo()
             {
                 Name = "Keratin Shampoo",
                 Brand = "Estel Professional",
@@ -64,7 +61,7 @@ namespace Dal
 
             };
             listProductsShampoo.Add(productShampoo);
-            productShampoo = new Shampoo()//shampoo
+            productShampoo = new Shampoo()
             {
                 Name = "Volume Shampoo for Oily Hair",
                 Brand = "Estel Professional",
@@ -250,7 +247,7 @@ namespace Dal
 
             };
             listProductsFountation.Add(productFoundation);
-            productFoundation = new Foundation()//foundation
+            productFoundation = new Foundation()
             {
                 Name = "Alliance Perfect",
                 Brand = "L'Oreal Paris",
@@ -282,7 +279,7 @@ namespace Dal
 
             };
             listProductsShadow.Add(productsShadow);
-            productsShadow = new Shadows()//shadow
+            productsShadow = new Shadows()
             {
                 Name = "Color Riche Mono",
                 Brand = "L'Oreal Paris",
@@ -296,7 +293,7 @@ namespace Dal
 
             };
             listProductsShadow.Add(productsShadow);
-            productsShadow = new Shadows()//shadow
+            productsShadow = new Shadows()
             {
                 Name = "Color Riche Mono",
                 Brand = "L'Oreal Paris",
@@ -310,7 +307,7 @@ namespace Dal
 
             };
             listProductsShadow.Add(productsShadow);
-            productsShadow = new Shadows()//shadow
+            productsShadow = new Shadows()
             {
                 Name = "Color Riche Mono",
                 Brand = "L'Oreal Paris",
@@ -342,7 +339,7 @@ namespace Dal
 
             };
             listProductLipstick.Add(productLipstick);
-            productLipstick = new Lipstick()//lipstick
+            productLipstick = new Lipstick()
             {
                 Name = "Intense Lipstick",
                 Brand = "L'Oreal Paris",
@@ -375,7 +372,7 @@ namespace Dal
 
             };
             listProductPowder.Add(productPowder);
-            productPowder = new Powder()//powder
+            productPowder = new Powder()
             {
                 Name = "Infallible Powder",
                 Brand = "L'Oreal Paris",
@@ -388,7 +385,7 @@ namespace Dal
                 QuntityCount = 0.1
             };
             listProductPowder.Add(productPowder);
-            productPowder = new Powder()//powder
+            productPowder = new Powder()
             {
                 Name = "Infallible Powder",
                 Brand = "L'Oreal Paris",
@@ -467,7 +464,7 @@ namespace Dal
                 QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
-            productPolish = new NailPolish()//gelPolish
+            productPolish = new NailPolish()
             {
                 Name = "Gel Polish ",
                 Brand = "Kodi ",
@@ -480,7 +477,7 @@ namespace Dal
                 QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
-            productPolish = new NailPolish()//gelPolish
+            productPolish = new NailPolish()
             {
                 Name = "Gel Polish ",
                 Brand = "Kodi ",
@@ -493,7 +490,7 @@ namespace Dal
                 QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
-            productPolish = new NailPolish()//gelPolish
+            productPolish = new NailPolish()
             {
                 Name = "Gel Polish ",
                 Brand = "Kodi ",
@@ -506,7 +503,7 @@ namespace Dal
                 QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
-            productPolish = new NailPolish()//gelPolish
+            productPolish = new NailPolish()
             {
                 Name = "Gel Polish ",
                 Brand = "Kodi ",
@@ -519,7 +516,7 @@ namespace Dal
                 QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
-            productPolish = new NailPolish()//gelPolish
+            productPolish = new NailPolish()
             {
                 Name = "Gel Polish ",
                 Brand = "Kodi ",
@@ -532,11 +529,8 @@ namespace Dal
                 QuntityCount = 0.1
             };
             listProductPolish.Add(productPolish);
-
             context.Materials.AddRange(listProductPolish);
-
             context.SaveChanges();
-
             List<Material> listfromManicure = new List<Material>();
             listfromManicure.AddRange(listProductPolish);
             listfromManicure.AddRange(listProductTop);

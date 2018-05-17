@@ -15,7 +15,7 @@ namespace WcfService
         [OperationContract]
         StaffWCF GetUserAutorization(string login, string password);
         [OperationContract]
-        string[] WritingOff(List<WriteOffMaterialsWCF> writeOffMaterials);
+        string[] WritingOff(WriteOffMaterialsWCF[] writeOffMaterials);
         [OperationContract]
         ServicesWCF[] GetServices();
         [OperationContract]

@@ -18,23 +18,26 @@ namespace Dal
         public List<string> WritingOff (List<WriteOffMaterial> writeOffMaterials)
         {
             List<string> newlist = new List<string>();
-
-            foreach( var item in writeOffMaterials)
+            Material material=null;
+            foreach ( var item in writeOffMaterials)
             {
-                Material material = model.Materials.First(x => x.Id == item.Material.Id);
-                if(material.QuantityGeneralVolume < item.UsedQuantity*item.Material.QuntityCount)
-                {
-                    newlist.Add(material.Name);
-                }
+                material= model.Materials.First(x => x.Id == item.Material.Id);
+                    if (material.QuantityGeneralVolume <((double)item.UsedQuantity * material.QuntityCount))
+                    {
+                        newlist.Add(material.Name+" "+material.Brand+" "+ material.Color);
+                    }
             }
            if(newlist.Count==0)
             {
                 foreach(var item in writeOffMaterials)
                 {
-                    Material material = model.Materials.First(x => x.Id == item.Material.Id);
-                    material.QuantityGeneralVolume -= item.UsedQuantity * item.Material.QuntityCount;
+                     material = model.Materials.First(x => x.Id == item.Material.Id);
+                    item.Material = material;
+                    material.QuantityGeneralVolume -= item.UsedQuantity * material.QuntityCount;
                     material.QuantityBottles = (int)(material.QuantityGeneralVolume / material.Volume);
                 }
+                model.WriteOffMaterials.AddRange(writeOffMaterials);
+                model.SaveChanges();
             }
             return newlist;
         }

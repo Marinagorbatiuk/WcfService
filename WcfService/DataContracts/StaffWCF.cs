@@ -15,9 +15,7 @@ namespace WcfService
         public string Login { get; set; }
         [DataMember]
         public string Password { get; set; }
-
         [DataMember] 
-
         public WorkPositionWCF WorkPosition { get; set; }
     }
 }

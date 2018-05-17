@@ -11,8 +11,7 @@ namespace Dal
         ModelBeauty model = new ModelBeauty();
         public void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id)
         {
-            //model.Materials.First(x => (x is Material)).Id = id;
-           
+
             Material materialNew =  model.Materials.First(x => x.Id == id);
             materialNew.QuantityGeneralVolume = QuantityGeneralVolume;
             materialNew.QuantityBottles = QuantityBottles;
@@ -37,9 +36,6 @@ namespace Dal
             List<Shampoo> shampoo = new List<Shampoo>();
             
                 shampoo = model.Materials.Where(x => (x is Shampoo)).Select(y => (y as Shampoo)).ToList();
-                // shampoo = tmpshampo.Select(x=> x).ToList();
-            
-
             return shampoo;
         }
         public List<Balsam> GetBalsam()
@@ -61,7 +57,6 @@ namespace Dal
             List<Foundation> foundation = new List<Foundation>();
            
                 foundation = model.Materials.Where(x => (x is Foundation)).Select(y => (y as Foundation)).ToList();
-            
 
             return foundation;
         }
@@ -70,26 +65,20 @@ namespace Dal
             List<Laque> laque = new List<Laque>();
            
                 laque = model.Materials.Where(x => (x is Laque)).Select(y => (y as Laque)).ToList();
-            
-
             return laque;
         }
         public List<Lipstick> GetLipstick()
         {
             List<Lipstick> lipstick = new List<Lipstick>();
            
-                lipstick = model.Materials.Where(x => (x is Lipstick)).Select(y => (y as Lipstick)).ToList();
-            
-
+                lipstick = model.Materials.Where(x => (x is Lipstick)).Select(y => (y as Lipstick)).ToList();            
             return lipstick;
         }
         public List<Mascara> GetMascara()
         {
             List<Mascara> mascara = new List<Mascara>();
            
-                mascara = model.Materials.Where(x => (x is Mascara)).Select(y => (y as Mascara)).ToList();
-            
-
+                mascara = model.Materials.Where(x => (x is Mascara)).Select(y => (y as Mascara)).ToList();           
             return mascara;
         }
         public List<NailBase> GetNailBase()
@@ -97,17 +86,13 @@ namespace Dal
             List<NailBase> nailBases = new List<NailBase>();
            
                 nailBases = model.Materials.Where(x => (x is NailBase)).Select(y => (y as NailBase)).ToList();
-            
-
             return nailBases;
         }
         public List<NailPolish> GetNailPolish()
         {
             List<NailPolish> nailPolish = new List<NailPolish>();
    
-                nailPolish = model.Materials.Where(x => (x is NailPolish)).Select(y => (y as NailPolish)).ToList();
-            
-
+                nailPolish = model.Materials.Where(x => (x is NailPolish)).Select(y => (y as NailPolish)).ToList();            
             return nailPolish;
         }
         public List<NailTop> GetNailTop()
@@ -115,8 +100,6 @@ namespace Dal
             List<NailTop> nailTop = new List<NailTop>();
     
                 nailTop = model.Materials.Where(x => (x is NailTop)).Select(y => (y as NailTop)).ToList();
-            
-
             return nailTop;
         }
         public List<Powder> GetPowder()
@@ -124,8 +107,6 @@ namespace Dal
             List<Powder> powder = new List<Powder>();
     
                 powder = model.Materials.Where(x => (x is Powder)).Select(y => (y as Powder)).ToList();
-  
-
             return powder;
         }
         public List<Shadows> GetShadow()
@@ -133,8 +114,6 @@ namespace Dal
             List<Shadows> shadows = new List<Shadows>();
 
                 shadows = model.Materials.Where(x => (x is Shadows)).Select(y => (y as Shadows)).ToList();
-            
-
             return shadows;
         }
             
@@ -165,11 +144,7 @@ namespace Dal
             return works;
 
         }
-        /// <summary>
-        /// ??????????????????????????????????????????????
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <returns></returns>
+
         public WorkPosition GetOneWorkPosition(int Id)
         {
             WorkPosition workPosition = null;

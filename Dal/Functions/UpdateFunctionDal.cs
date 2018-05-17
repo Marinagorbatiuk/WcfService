@@ -22,10 +22,8 @@ namespace Dal
             shampooEnt.Volume = shampoo.Volume;
             shampooEnt.Description = shampoo.Description;
             shampoo.Color = shampoo.Color;
-            model.SaveChanges();
-            
+            model.SaveChanges();           
         }
-
         public void UpdateBalsam(Balsam dTOBalsam)
         {
             Balsam balsam = null;

@@ -7,7 +7,20 @@ using System.Web;
 namespace WcfService
 {
     [DataContract]
-   
+
+    [KnownType (typeof(WriteOffMaterialsWCF))]
+    [KnownType(typeof(ShadowsWCF))]
+    [KnownType(typeof(BalsamWCF))]
+    [KnownType(typeof(ShampooWCF))]
+    [KnownType(typeof(LaqueWCF))]
+    [KnownType(typeof(ColorWCF))]
+    [KnownType(typeof(FoundationWCF))]
+    [KnownType(typeof(PowderWCF))]
+    [KnownType(typeof(MascaraWCF))]
+    [KnownType(typeof(LipstickWCF))]
+    [KnownType(typeof(NailTopWCF))]
+    [KnownType(typeof(NailPolishWCF))]
+    [KnownType(typeof(NailBaseWCF))]
     public class MaterialsWCF
     {
         [DataMember]

@@ -28,19 +28,15 @@ namespace BLL
                         Name = staff.WorkPosition.Name,
                     }
                 };
-
             }
             return bllStaff;
         }
-
         public void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id)
         {
             function.GetChangedQuantity(QuantityBottles, QuantityGeneralVolume, id);
         }
-
         public List<BllWorkPosition> GetListPositions()
-        {
-          
+        {      
             List<BllWorkPosition> positions = new List<BllWorkPosition>();
             foreach (var item in function.GetWorkPosition())
             {
@@ -159,15 +155,13 @@ namespace BLL
             bllShadowList = function.GetShadow().Select(x => ConvertationsBLL.ConvertShadowToBll(x)).ToList();
 
             return bllShadowList;
-        }
-        // Employee
+        }    
         public List<BllStaff> GetEmployees()
         {
             List<BllStaff> bllStaffs = new List<BllStaff>();
             bllStaffs = function.GetStaff().Select(x => ConvertationsBLL.ConvertStaffToBll(x)).ToList();
             return bllStaffs;
         }
-        // services
         public List<BllServices> GetListServices()
         {
           

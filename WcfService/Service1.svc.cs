@@ -171,9 +171,9 @@ namespace WcfService
         {
             return getFunctionWCF.GetListServices().ToArray();
         }
-        public string[] WritingOff(List<WriteOffMaterialsWCF> writeOffMaterials)
+        public string[] WritingOff(WriteOffMaterialsWCF[] writeOffMaterials)
         {
-            return addFunctionWCF.WritingOff(writeOffMaterials).ToArray();
+            return addFunctionWCF.WritingOff(writeOffMaterials.ToList()).ToArray();
         }
         public StaffWCF GetUserAutorization(string login, string password)
         {
@@ -238,8 +238,6 @@ namespace WcfService
         public void UpdateTop(NailTopWCF nailTopWCF)
         {
             updateFunctionWCF.UpdateTop(nailTopWCF);
-        }
-
-      
+        }      
     }
 }
