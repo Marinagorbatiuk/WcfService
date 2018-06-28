@@ -9,5 +9,10 @@ namespace Dal
         [Required]
         public string Password { get; set; }
         public virtual WorkPosition WorkPosition { get; set; }
+
+        public override string ToString()
+        {
+            return Login;
+        }
     }
 }

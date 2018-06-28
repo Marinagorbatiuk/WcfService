@@ -7,75 +7,70 @@ using Dal;
 using System.ComponentModel.DataAnnotations;
 namespace BLL
 {
-   public class AddFunctions
+   public class AddFunctions:IBllAdd
     {
         AddFunctionDal function = new AddFunctionDal();
         public void AddEmployee(BllStaff bllStaff)
-        {
-            //ValidationContext context = new ValidationContext(bllStaff);
-            //List<ValidationResult> result = new List<ValidationResult>();
-            //if(Validator.TryValidateObject(bllStaff,context,result,true))
-            //{
+        {        
                function.AddUser(ConvertationsBLL.ConvertStaffToDTO(bllStaff));
-            //}
-            //else
-            //{
-            //}
-         
         }
 
         public List<string> WritingOff(List<WriteOffMaterialBll> writeOffMaterials)
         {
             return function.WritingOff(writeOffMaterials.Select(x => ConvertationsBLL.ConvertWriteOffToBD(x)).ToList());
         }
-        public void AddShampooToDB(BllShampoo bllShampoo)
+        public void AddMaterialToDB(BllMaterials bllmaterials )
         {
-            function.AddShampooToDB(ConvertationsBLL.ConvertShampooToDTO(bllShampoo));
+            function.AddMaterialToDB(ConvertationsBLL.ConvertMaterialsToDB(bllmaterials));
         }
-        public void AddBalsamToDB(BllBalsam bllBalsam)
-        {
-            function.AddBalsamToDB(ConvertationsBLL.ConvertBalsamToDTO(bllBalsam));
-        }
-        public void AddColorToDB(BllColor bllColor)
-        {
-            function.AddColorToDB(ConvertationsBLL.ConvertColorToDTO(bllColor));
-        }
-        public void AddLaqueToDB(BllLaque bllLaque)
-        {
-            function.AddLaqueToDB(ConvertationsBLL.ConvertLaqueToDTO(bllLaque));
-        }
-        public void AddFoundationToDB(BllFoundation bllFoundation)
-        {
-            function.AddFoundationToDB(ConvertationsBLL.ConvertFoundationToDTO(bllFoundation));
-        }
-        public void AddLipstickToDB(BllLipstick bllLipstick)
-        {
-            function.AddLipstickToDB(ConvertationsBLL.ConvertLipstickToDTO(bllLipstick));
-        }
-        public void AddMascaraToDB(BllMascara bllMascara)
-        {
-            function.AddMascaraToDB(ConvertationsBLL.ConvertMascaraToDTO(bllMascara));
-        }
-        public void AddPowderToDB(BllPowder bllPowder)
-        {
-            function.AddPowderToDB(ConvertationsBLL.ConvertPowderToDTO(bllPowder));
-        }
-        public void AddShadowToDB(BllShadows bllShadows)
-        {
-            function.AddShadowToDB(ConvertationsBLL.ConvertShadowToDTO(bllShadows));
-        }
-        public void AddPolishToDB(BllNailPolish bllNailPolish)
-        {
-            function.AddPolishToDB(ConvertationsBLL.ConvertPolishToDTO(bllNailPolish));
-        }
-        public void AddTopToDB(BllNailTop bllNailTop)
-        {
-            function.AddTopToDB(ConvertationsBLL.ConvertTopToDTO(bllNailTop));
-        }
-        public void AddBaseToDB(BllNailBase bllNailBase)
-        {
-            function.AddBaseToDB(ConvertationsBLL.ConvertBaseToDTO(bllNailBase));
-        }
+        //public void AddShampooToDB(BllShampoo bllShampoo)
+        //{
+        //    function.AddShampooToDB(ConvertationsBLL.ConvertShampooToDTO(bllShampoo));      
+        // }
+        //public void AddBalsamToDB(BllBalsam bllBalsam)
+        //{
+        //    function.AddBalsamToDB(ConvertationsBLL.ConvertBalsamToDTO(bllBalsam));
+        //}
+        //public void AddColorToDB(BllColor bllColor)
+        //{
+        //    function.AddColorToDB(ConvertationsBLL.ConvertColorToDTO(bllColor));
+        //}
+        //public void AddLaqueToDB(BllLaque bllLaque)
+        //{
+        //    function.AddLaqueToDB(ConvertationsBLL.ConvertLaqueToDTO(bllLaque));
+        //}
+        //public void AddFoundationToDB(BllFoundation bllFoundation)
+        //{
+        //    function.AddFoundationToDB(ConvertationsBLL.ConvertFoundationToDTO(bllFoundation));
+        //}
+        //public void AddLipstickToDB(BllLipstick bllLipstick)
+        //{
+        //    function.AddLipstickToDB(ConvertationsBLL.ConvertLipstickToDTO(bllLipstick));
+        //}
+        //public void AddMascaraToDB(BllMascara bllMascara)
+        //{
+        //    function.AddMascaraToDB(ConvertationsBLL.ConvertMascaraToDTO(bllMascara));
+        //}
+        //public void AddPowderToDB(BllPowder bllPowder)
+        //{
+        //    function.AddPowderToDB(ConvertationsBLL.ConvertPowderToDTO(bllPowder));
+        //}
+        //public void AddShadowToDB(BllShadows bllShadows)
+        //{
+        //    function.AddShadowToDB(ConvertationsBLL.ConvertShadowToDTO(bllShadows));
+        //}
+        //public void AddPolishToDB(BllNailPolish bllNailPolish)
+        //{
+        //    function.AddPolishToDB(ConvertationsBLL.ConvertPolishToDTO(bllNailPolish));
+        //}
+        //public void AddTopToDB(BllNailTop bllNailTop)
+        //{
+        //    function.AddTopToDB(ConvertationsBLL.ConvertTopToDTO(bllNailTop));
+        //}
+        //public void AddBaseToDB(BllNailBase bllNailBase)
+        //{
+        //    function.AddBaseToDB(ConvertationsBLL.ConvertBaseToDTO(bllNailBase));
+        //}
 
     }
 }

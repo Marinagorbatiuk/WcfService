@@ -10,6 +10,20 @@ namespace BLL
 {
     public class ConvertationsBLL
     {
+
+        public static BllInfo ConvertToBllInfo( Info info)
+        {
+            return new BllInfo
+            {
+                id = info.id,
+                Action = info.Action,
+                ActionTime = info.ActionTime,
+                InputParameters = info.InputParameters,
+                OutputParameters = info.OutputParameters,
+                Login = info.Login
+            };
+        }
+
         public static BllStaff ConvertStaffToBll(Staff dTODallStaff)
         {
             BllStaff bllStaff = new BllStaff()
@@ -573,54 +587,69 @@ namespace BLL
 
         public static Material ConvertMaterialsToDB(BllMaterials tmpMaterial)
         {
+            GetFunctionDal dal = new GetFunctionDal();
+
             Material getmaterial = null;
             if (tmpMaterial is BllBalsam)
             {
+               // GetFunctionDal dal = new GetFunctionDal();
                 getmaterial = ConvertBalsamToDTO(tmpMaterial as BllBalsam);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is BllShampoo)
             {
                 getmaterial = ConvertShampooToDTO(tmpMaterial as BllShampoo);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is BllLaque)
             {
                 getmaterial = ConvertLaqueToDTO(tmpMaterial as BllLaque);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is BllColor)
             {
                 getmaterial = ConvertColorToDTO(tmpMaterial as BllColor);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is BllPowder)
             {
                 getmaterial = ConvertPowderToDTO(tmpMaterial as BllPowder);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllFoundation)
             {
                 getmaterial = ConvertFoundationToDTO(tmpMaterial as BllFoundation);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllMascara)
             {
                 getmaterial = ConvertMascaraToDTO(tmpMaterial as BllMascara);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllLipstick)
             {
                 getmaterial = ConvertLipstickToDTO(tmpMaterial as BllLipstick);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllShadows)
             {
                 getmaterial = ConvertShadowToDTO(tmpMaterial as BllShadows);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllNailBase)
             {
                 getmaterial = ConvertBaseToDTO(tmpMaterial as BllNailBase);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "Manicure").ToList();
             }
             else if (tmpMaterial is BllNailTop)
             {
                 getmaterial = ConvertTopToDTO(tmpMaterial as BllNailTop);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "Manicure").ToList();
             }
             else if (tmpMaterial is BllNailPolish)
             {
                 getmaterial = ConvertPolishToDTO(tmpMaterial as BllNailPolish);
+                getmaterial.Service = dal.getServices().Where(x => x.Name == "Manicure").ToList();
             }
             return getmaterial;
         }

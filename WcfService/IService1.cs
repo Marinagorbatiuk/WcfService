@@ -102,7 +102,9 @@ namespace WcfService
         void UpdateBase(NailBaseWCF nailBaseWCF);
         [OperationContract]
         void UpdatePolish(NailPolishWCF nailPolishWCF);
-        
-        
+        [OperationContract]
+        ICollection<InfoWCF> GetLoggs();
+
+
     }
 }

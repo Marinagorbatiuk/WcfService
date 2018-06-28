@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dal;
 namespace BLL
 {
- public   class DeleteFunctions
+ public   class DeleteFunctions:IBllDelete
     {
         DeleteFunctionDal function = new DeleteFunctionDal();
         public void DeleteEmployee(int id)

@@ -26,6 +26,7 @@ namespace Dal
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<WorkPosition> WorkPositions { get; set; }
         public virtual DbSet<WriteOffMaterial> WriteOffMaterials { get; set; }
+        public virtual DbSet<Info> Infos { get; set; }
     }
 
 }

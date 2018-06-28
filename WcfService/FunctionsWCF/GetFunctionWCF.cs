@@ -8,6 +8,12 @@ namespace WcfService
     public class GetFunctionWCF
     {
         GetFunctions function = new GetFunctions();
+
+        public ICollection<InfoWCF> GetLoggs()
+        {
+            return function.GetLoggs().Select(x => ConvertationsWCF.ConvertToBllInfo(x)).ToList();
+        }
+
         public StaffWCF GetUserAutorization(string login, string password)
         {
             StaffWCF Staffwcf = null;

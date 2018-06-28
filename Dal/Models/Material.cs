@@ -28,17 +28,89 @@ namespace Dal
         public double QuntityCount { get; set; }
     }
 
-    public class Shampoo : Material { }
-    public class Balsam : Material { }
-    public class HairColor : Material { }
-    public class Laque : Material { }
-    public class Lipstick : Material { }
-    public class Mascara : Material { }
-    public class Foundation : Material { }
-    public class Powder : Material { }
-    public class Shadows : Material { }
-    public class NailPolish : Material { }
-    public class NailTop : Material { }
-    public class NailBase : Material { }
+    public class Shampoo : Material
+    {
+        public override string ToString()
+        {
+            return "Shampoo " + Name;
+        }
+    }
+    public class Balsam : Material
+    {
+        public override string ToString()
+        {
+            return "Balsam " + Name;
+        }
+    }
+    public class HairColor : Material
+    {
+        public override string ToString()
+        {
+            return "Hair color " + Name;
+        }
+    }
+    public class Laque : Material
+    {
+        public override string ToString()
+        {
+            return "Laque " + Name;
+        }
+    }
+    public class Lipstick : Material
+    {
+        public override string ToString()
+        {
+            return "Lipstick " + Name;
+        }
+    }
+    public class Mascara : Material
+    {
+        public override string ToString()
+        {
+            return "Mascara " + Name;
+        }
+    }
+    public class Foundation : Material
+    {
+        public override string ToString()
+        {
+            return "Foundation " + Name;
+        }
+    }
+    public class Powder : Material
+    {
+        public override string ToString()
+        {
+            return "Powder " + Name;
+        }
+    }
+    public class Shadows : Material
+    {
+        public override string ToString()
+        {
+            return "Shadow " + Name;
+        }
+    }
+    public class NailPolish : Material
+    {
+        public override string ToString()
+        {
+            return "Nail polish " + Name;
+        }
+    }
+    public class NailTop : Material
+    {
+        public override string ToString()
+        {
+            return "Nail top " + Name;
+        }
+    }
+    public class NailBase : Material
+    {
+        public override string ToString()
+        {
+            return "Nail base " + Name;
+        }
+    }
 
 }

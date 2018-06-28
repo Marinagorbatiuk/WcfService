@@ -238,6 +238,11 @@ namespace WcfService
         public void UpdateTop(NailTopWCF nailTopWCF)
         {
             updateFunctionWCF.UpdateTop(nailTopWCF);
-        }      
+        }
+
+        public ICollection<InfoWCF> GetLoggs()
+        {
+            return getFunctionWCF.GetLoggs();
+        }
     }
 }

@@ -7,6 +7,19 @@ namespace WcfService
 {
     public class ConvertationsWCF
     {
+        public static InfoWCF ConvertToBllInfo(BllInfo info)
+        {
+            return new InfoWCF
+            {
+                id = info.id,
+                Action = info.Action,
+                ActionTime = info.ActionTime,
+                InputParameters = info.InputParameters,
+                OutputParameters = info.OutputParameters,
+                Login = info.Login
+            };
+        }
+
         public static StaffWCF ConvertStaffToWcf(BllStaff dTODallStaff)
         {
             StaffWCF wcfStaff = new StaffWCF()
@@ -577,54 +590,69 @@ namespace WcfService
 
         public static BllMaterials ConvertMaterialsToDB(MaterialsWCF tmpMaterial)
         {
+            GetFunctions get = new GetFunctions();
             BllMaterials getmaterial = null;
             if (tmpMaterial is BalsamWCF)
             {
                 getmaterial = ConvertBalsamToBll(tmpMaterial as BalsamWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
-            else if (tmpMaterial is ShadowsWCF)
+            else if (tmpMaterial is ShampooWCF)
             {
                 getmaterial = ConvertShadowToBll(tmpMaterial as ShadowsWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is LaqueWCF)
             {
                 getmaterial = ConvertLaqueToBll(tmpMaterial as LaqueWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is ColorWCF)
             {
                 getmaterial = ConvertColorToBll(tmpMaterial as ColorWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x =>  x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is PowderWCF)
             {
                 getmaterial = ConvertPowderToBll(tmpMaterial as PowderWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is FoundationWCF)
             {
                 getmaterial = ConvertFoundationToBll(tmpMaterial as FoundationWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is MascaraWCF)
             {
                 getmaterial = ConvertMascaraToBll(tmpMaterial as MascaraWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is LipstickWCF)
             {
                 getmaterial = ConvertLipstickToBLL(tmpMaterial as LipstickWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is ShadowsWCF)
             {
                 getmaterial = ConvertShadowToBll(tmpMaterial as ShadowsWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is NailBaseWCF)
             {
                 getmaterial = ConvertBaseToBll(tmpMaterial as NailBaseWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "Manicure").ToList();
             }
             else if (tmpMaterial is NailTopWCF)
             {
                 getmaterial = ConvertTopTOBLL(tmpMaterial as NailTopWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "Manicure").ToList();
+
             }
             else if (tmpMaterial is NailPolishWCF)
             {
                 getmaterial = ConvertPolishToBLL(tmpMaterial as NailPolishWCF);
+                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "Manicure").ToList();
+
             }
             return getmaterial;
         }
