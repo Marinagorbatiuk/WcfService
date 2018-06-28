@@ -4,8 +4,10 @@
 namespace WcfService.App_Start
 {
     using System;
+    using System.Data.Entity;
     using System.Web;
-
+    using BLL;
+    using Dal;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -61,7 +63,10 @@ namespace WcfService.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-
+            kernel.Bind<IDalAdd>().To<AddFunctionDal>();
+            kernel.Bind<DbContext>().To<ModelBeauty>();
+            kernel.Bind<IBllAdd>().To<AddFunctions>();
+            kernel.Bind<IWCFAdd>().To<AddFunctionWCF>();
         }        
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    interface IDalUpdate
+  public  interface IDalUpdate
     {
         void UpdateMaterial(Material material);
     }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace WcfService
 {
-    interface IWCFAdd
+  public  interface IWCFAdd
     {
+        void AddEmployee(StaffWCF wcfStaff);
+        List<string> WritingOff(List<WriteOffMaterialsWCF> writeOffMaterials);
+        void AddMaterialsToDB(MaterialsWCF materialsWCF);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    interface IDalDelete
+   public interface IDalDelete
     {
         void Delete(int id);
         void DeleteUser(int id);

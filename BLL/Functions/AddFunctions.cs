@@ -9,7 +9,11 @@ namespace BLL
 {
    public class AddFunctions:IBllAdd
     {
-        AddFunctionDal function = new AddFunctionDal();
+        IDalAdd function;
+        public AddFunctions(IDalAdd dalAdd)
+        {
+            function = dalAdd;
+        }
         public void AddEmployee(BllStaff bllStaff)
         {        
                function.AddUser(ConvertationsBLL.ConvertStaffToDTO(bllStaff));

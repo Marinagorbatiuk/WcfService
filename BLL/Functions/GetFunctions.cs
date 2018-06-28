@@ -48,9 +48,10 @@ namespace BLL
         }
         public List<BllMaterials> GetListMaterials()
         {
-            List<BllMaterials> bllMaterials = new List<BllMaterials>();
-            bllMaterials = function.GetMaterial().Select(x => ConvertationsBLL.ConvertBllMaterials(x)).ToList();
-            return bllMaterials;
+            //List<BllMaterials> bllMaterials = new List<BllMaterials>();
+            //bllMaterials = function.GetMaterial().Select(x => ConvertationsBLL.ConvertBllMaterials(x)).ToList();
+            //return bllMaterials;
+            return function.GetMaterial().Select(x => ConvertationsBLL.ConvertBllMaterials(x)).ToList();
         }
         //public List<BllShampoo> GetListShampoo()
         //{

@@ -595,37 +595,37 @@ namespace WcfService
             if (tmpMaterial is BalsamWCF)
             {
                 getmaterial = ConvertBalsamToBll(tmpMaterial as BalsamWCF);
-                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
+                //getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is ShampooWCF)
             {
                 getmaterial = ConvertShadowToBll(tmpMaterial as ShadowsWCF);
-                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
+                //getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is LaqueWCF)
             {
                 getmaterial = ConvertLaqueToBll(tmpMaterial as LaqueWCF);
-                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
+                //getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is ColorWCF)
             {
                 getmaterial = ConvertColorToBll(tmpMaterial as ColorWCF);
-                getmaterial.BllServices = get.GetListServices().Where(x =>  x.Name == "HairColoring").ToList();
+                //getmaterial.BllServices = get.GetListServices().Where(x =>  x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is PowderWCF)
             {
                 getmaterial = ConvertPowderToBll(tmpMaterial as PowderWCF);
-                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
+                //getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is FoundationWCF)
             {
                 getmaterial = ConvertFoundationToBll(tmpMaterial as FoundationWCF);
-                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
+                //getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is MascaraWCF)
             {
                 getmaterial = ConvertMascaraToBll(tmpMaterial as MascaraWCF);
-                getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
+                //getmaterial.BllServices = get.GetListServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is LipstickWCF)
             {

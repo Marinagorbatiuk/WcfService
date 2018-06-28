@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    interface IBllAdd
+   public interface IBllAdd
     {
         void AddEmployee(BllStaff bllStaff);
         List<string> WritingOff(List<WriteOffMaterialBll> writeOffMaterials);

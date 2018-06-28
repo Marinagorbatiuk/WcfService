@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +9,14 @@ namespace Dal
 {
   public  class AddFunctionDal:IDalAdd
     {
-        ModelBeauty model = new ModelBeauty();
+        DbContext model;
+        public AddFunctionDal(DbContext context)
+        {
+            model = context;
+        }
         public void AddUser(Staff dTODallStaff)
         {
-                dTODallStaff.WorkPosition = model.WorkPositions.First(x=>x.Name== dTODallStaff.WorkPosition.Name);
+                dTODallStaff.WorkPosition = model.Set<WorkPosition>().First(x=>x.Name== dTODallStaff.WorkPosition.Name);
 
             Logger.WriteLog(
                new Info
@@ -24,7 +29,7 @@ namespace Dal
                }
                );
 
-            model.Staffs.Add(dTODallStaff);
+            model.Set<Staff>().Add(dTODallStaff);
                 model.SaveChanges();
         }
         public List<string> WritingOff (List<WriteOffMaterial> writeOffMaterials)
@@ -33,7 +38,7 @@ namespace Dal
             Material material=null;
             foreach ( var item in writeOffMaterials)
             {
-                material= model.Materials.First(x => x.Id == item.Material.Id);
+                material= model.Set<Material>().First(x => x.Id == item.Material.Id);
                     if (material.QuantityGeneralVolume <((double)item.UsedQuantity * material.QuntityCount))
                     {
                         newlist.Add(material.Name+" "+material.Brand+" "+ material.Color);
@@ -43,12 +48,12 @@ namespace Dal
             {
                 foreach(var item in writeOffMaterials)
                 {
-                     material = model.Materials.First(x => x.Id == item.Material.Id);
+                     material = model.Set<Material>().First(x => x.Id == item.Material.Id);
                     item.Material = material;
                     material.QuantityGeneralVolume -= item.UsedQuantity * material.QuntityCount;
                     material.QuantityBottles = (int)(material.QuantityGeneralVolume / material.Volume);
                 }
-                model.WriteOffMaterials.AddRange(writeOffMaterials);
+                model.Set<WriteOffMaterial>().AddRange(writeOffMaterials);
                 model.SaveChanges();
             }
             Logger.WriteLog(
@@ -76,7 +81,7 @@ namespace Dal
                );
 
          //   shampoos.Service=model.Materials.First(x => (x is Shampoo)).Service;
-                model.Materials.Add(material);
+                model.Set<Material>().Add(material);
                 model.SaveChanges();
         }
         //public void AddBalsamToDB(Balsam balsam)

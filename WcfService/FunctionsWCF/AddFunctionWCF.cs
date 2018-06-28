@@ -5,9 +5,14 @@ using System.Web;
 using BLL;
 namespace WcfService
 {
-    public class AddFunctionWCF
+    public class AddFunctionWCF:IWCFAdd
     {
-        AddFunctions function = new AddFunctions();
+        IBllAdd function;
+        public AddFunctionWCF(IBllAdd bllAdd)
+        {
+            function = bllAdd;
+        }
+
         public void AddEmployee(StaffWCF  wcfStaff)
         {
             function.AddEmployee(ConvertationsWCF.ConvertStaffToBll(wcfStaff));

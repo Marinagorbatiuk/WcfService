@@ -38,9 +38,10 @@ namespace Dal
         }
         public List<Material> GetMaterial()
         {
-            List<Material> materials = new List<Material>();
-            materials = model.Materials.Select(x => (x as Material)).ToList();
-            return materials;
+            //List<Material> materials = new List<Material>();
+            //materials = model.Materials.Select(x => (x as Material)).ToList();
+            //return materials;
+            return model.Materials.ToList();
         }
         ///// <summary>
         ///// The method gets list of shampoo from Entity

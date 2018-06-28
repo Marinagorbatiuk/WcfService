@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    interface IDalGet
+ public   interface IDalGet
     {
         void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id);
         List<Service> getServices();

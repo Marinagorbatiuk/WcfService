@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    interface IDalAdd
+  public interface IDalAdd
     {
         void AddUser(Staff dTODallStaff);
         List<string> WritingOff(List<WriteOffMaterial> writeOffMaterials);
