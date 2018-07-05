@@ -5,9 +5,14 @@ using System.Web;
 using BLL;
 namespace WcfService
 {
-    public class DeleteFunctionWCF
+    public class DeleteFunctionWCF:IWCFDelete
     {
-        DeleteFunctions function = new DeleteFunctions();
+        IBllDelete function;
+        public DeleteFunctionWCF(IBllDelete bllDelete)
+        {
+            function = bllDelete;
+        }
+
         public void DeleteEmployee(int id)
         {
             function.DeleteEmployee(id);

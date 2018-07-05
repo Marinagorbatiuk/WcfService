@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WcfService
 {
-    interface IWCFDelete
+  public  interface IWCFDelete
     {
+        void DeleteEmployee(int id);
+        void DeleteProduct(int id);
     }
 }

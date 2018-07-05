@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace WcfService
 {
-    interface IWCFGet
+  public  interface IWCFGet
     {
+        ICollection<InfoWCF> GetLoggs();
+        StaffWCF GetUserAutorization(string login, string password);
+        void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id);
+        List<WorkPositionWCF> GetListPositions();
+        List<MaterialsWCF> GetMaterials();
+        List<StaffWCF> GetEmployees();
+        List<ServicesWCF> GetListServices();
     }
 }

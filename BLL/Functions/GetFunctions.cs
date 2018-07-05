@@ -8,11 +8,17 @@ namespace BLL
 {
   public  class GetFunctions:IBllGet
     {
-        GetFunctionDal function = new GetFunctionDal();
+        IDalGet function;
+        IConvertationBll convertationBll;
+        public GetFunctions(IDalGet dalGet, IConvertationBll convertationBll)
+        {
+            function = dalGet;
+            this.convertationBll = convertationBll;
+        }
 
         public ICollection<BllInfo> GetLoggs()
         {
-            return function.GetLoggs().Select(x => ConvertationsBLL.ConvertToBllInfo(x)).ToList();
+            return function.GetLoggs().Select(x => convertationBll.ConvertToBllInfo(x)).ToList();
         }
         public BllStaff GetUserAutorization(string login, string password)
         {
@@ -41,132 +47,21 @@ namespace BLL
             List<BllWorkPosition> positions = new List<BllWorkPosition>();
             foreach (var item in function.GetWorkPosition())
             {
-                positions.Add(ConvertationsBLL.ConvertPositionToBll(item));
+                positions.Add(convertationBll.ConvertPositionToBll(item));
             }
 
             return positions;
         }
         public List<BllMaterials> GetListMaterials()
         {
-            //List<BllMaterials> bllMaterials = new List<BllMaterials>();
-            //bllMaterials = function.GetMaterial().Select(x => ConvertationsBLL.ConvertBllMaterials(x)).ToList();
-            //return bllMaterials;
-            return function.GetMaterial().Select(x => ConvertationsBLL.ConvertBllMaterials(x)).ToList();
+           
+            return function.GetMaterial().Select(x => convertationBll.ConvertBllMaterials(x)).ToList();
         }
-        //public List<BllShampoo> GetListShampoo()
-        //{
-            
-        //    List<BllShampoo> bllShampoosList = new List<BllShampoo>();
-
-        //    bllShampoosList = function.GetShampoo().Select(x => ConvertationsBLL.ConvertShampoToBLL(x)).ToList();
-
-        //    return bllShampoosList;
-        //}
-        //public List<BllBalsam> GetListBalsam()
-        //{
-            
-        //    List<BllBalsam> bllBalsamList = new List<BllBalsam>();
-
-        //   bllBalsamList = function.GetBalsam().Select(x => ConvertationsBLL.ConvertBalsamToBll(x)).ToList();
-
-        //    return bllBalsamList;
-        //}
-        //public List<BllColor> GetListColor()
-        //{
-         
-        //    List<BllColor> bllBaColorList = new List<BllColor>();
-
-        //    bllBaColorList = function.GetColor().Select(x => ConvertationsBLL.ConvertColorToBll(x)).ToList();
-
-        //    return bllBaColorList;
-        //}
-        //public List<BllFoundation> GetListFoundation()
-        //{
-           
-        //    List<BllFoundation> bllBaFoundationList = new List<BllFoundation>();
-
-        //    bllBaFoundationList = function.GetFoundation().Select(x => ConvertationsBLL.ConvertFoundationToBll(x)).ToList();
-
-        //    return bllBaFoundationList;
-        //}
-
-        //public List<BllLaque> GetListLaque()
-        //{
-          
-        //    List<BllLaque> bllBaLaqueList = new List<BllLaque>();
-
-        //    bllBaLaqueList = function.GetLaque().Select(x => ConvertationsBLL.ConvertLaqueToBll(x)).ToList();
-
-        //    return bllBaLaqueList;
-        //}
-        //public List<BllLipstick> GetListLipstick()
-        //{
-           
-        //    List<BllLipstick> bllBaLipstickList = new List<BllLipstick>();
-
-        //    bllBaLipstickList = function.GetLipstick().Select(x => ConvertationsBLL.ConvertLipstickToBLL(x)).ToList();
-
-        //    return bllBaLipstickList;
-        //}
-        //public List<BllMascara> GetListMascara()
-        //{
-          
-        //    List<BllMascara> bllBaMascaraList = new List<BllMascara>();
-
-        //    bllBaMascaraList = function.GetMascara().Select(x => ConvertationsBLL.ConvertMascaraToBll(x)).ToList();
-
-        //    return bllBaMascaraList;
-        //}
-        //public List<BllNailBase> GetListNailBase()
-        //{
-           
-        //    List<BllNailBase> bllBaseList = new List<BllNailBase>();
-
-        //    bllBaseList = function.GetNailBase().Select(x => ConvertationsBLL.ConvertBaseToBll(x)).ToList();
-
-        //    return bllBaseList;
-        //}
-
-        //public List<BllNailPolish> GetListNailPolish()
-        //{
-            
-        //    List<BllNailPolish> bllPolishList = new List<BllNailPolish>();
-
-        //    bllPolishList = function.GetNailPolish().Select(x => ConvertationsBLL.ConvertPolishToBLL(x)).ToList();
-
-        //    return bllPolishList;
-        //}
-        //public List<BllNailTop> GetListNailTop()
-        //{
-           
-        //    List<BllNailTop> bllTopList = new List<BllNailTop>();
-
-        //    bllTopList = function.GetNailTop().Select(x => ConvertationsBLL.ConvertTopTOBLL(x)).ToList();
-
-        //    return bllTopList;
-        //}
-        //public List<BllPowder> GetListPowder()
-        //{
-          
-        //    List<BllPowder> bllPowderList = new List<BllPowder>();
-
-        //    bllPowderList = function.GetPowder().Select(x => ConvertationsBLL.ConvertPowderToBll(x)).ToList();
-
-        //    return bllPowderList;
-        //}
-        //public List<BllShadows> GetListShadow()
-        //{
-          
-        //    List<BllShadows> bllShadowList = new List<BllShadows>();
-
-        //    bllShadowList = function.GetShadow().Select(x => ConvertationsBLL.ConvertShadowToBll(x)).ToList();
-
-        //    return bllShadowList;
-        //}    
+       
         public List<BllStaff> GetEmployees()
         {
             List<BllStaff> bllStaffs = new List<BllStaff>();
-            bllStaffs = function.GetStaff().Select(x => ConvertationsBLL.ConvertStaffToBll(x)).ToList();
+            bllStaffs = function.GetStaff().Select(x => convertationBll.ConvertStaffToBll(x)).ToList();
             return bllStaffs;
         }
         public List<BllServices> GetListServices()
@@ -178,7 +73,7 @@ namespace BLL
             {
                 Name = x.Name,
                 Price = x.Price,
-                BllMaterials = new List<BllMaterials>(x.Materials.Select(y => ConvertationsBLL.ConvertBllMaterials(y)).ToList())
+                BllMaterials = new List<BllMaterials>(x.Materials.Select(y => convertationBll.ConvertBllMaterials(y)).ToList())
             }).ToList());
             return getlistServices;
         }

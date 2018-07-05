@@ -8,10 +8,14 @@ using AutoMapper;
 
 namespace BLL
 {
-    public class ConvertationsBLL
+    public  class ConvertationsBLL:IConvertationBll
     {
-
-        public static BllInfo ConvertToBllInfo( Info info)
+        IDalGet dal;
+        public ConvertationsBLL(IDalGet dal)
+        {
+           this.dal=dal;
+        }
+        public  BllInfo ConvertToBllInfo( Info info)
         {
             return new BllInfo
             {
@@ -24,7 +28,7 @@ namespace BLL
             };
         }
 
-        public static BllStaff ConvertStaffToBll(Staff dTODallStaff)
+        public  BllStaff ConvertStaffToBll(Staff dTODallStaff)
         {
             BllStaff bllStaff = new BllStaff()
             {
@@ -39,7 +43,7 @@ namespace BLL
             };
             return bllStaff;
         }
-        public static BllStaff ConvertStaffToBllpartial(Staff dTODallStaff)
+        public  BllStaff ConvertStaffToBllpartial(Staff dTODallStaff)
         {
             BllStaff bllStaff = new BllStaff()
             {
@@ -50,7 +54,7 @@ namespace BLL
             };
             return bllStaff;
         }
-        public static Staff ConvertStaffToDTO(BllStaff bllStaff)
+        public  Staff ConvertStaffToDTO(BllStaff bllStaff)
         {
             Staff dTODallStaff = new Staff()
             {
@@ -66,7 +70,7 @@ namespace BLL
             return dTODallStaff;
         }
 
-        public static BllWorkPosition ConvertPositionToBll(WorkPosition WorkPosition)
+        public  BllWorkPosition ConvertPositionToBll(WorkPosition WorkPosition)
         {
             BllWorkPosition bllWorkPosition = new BllWorkPosition()
             {
@@ -88,7 +92,7 @@ namespace BLL
             }
             return bllWorkPosition;
         }
-        public static WriteOffMaterial ConvertWriteOffToBD(WriteOffMaterialBll writeOffMaterialBll)
+        public  WriteOffMaterial ConvertWriteOffToBD(WriteOffMaterialBll writeOffMaterialBll)
         {
             WriteOffMaterial writeOffMaterial = new WriteOffMaterial()
             {
@@ -98,7 +102,7 @@ namespace BLL
             return writeOffMaterial;
         }
 
-        public static WorkPosition ConvertPositionToDTO(BllWorkPosition bllWorkPosition)
+        public  WorkPosition ConvertPositionToDTO(BllWorkPosition bllWorkPosition)
         {
             WorkPosition dTODalWorkPosition = new WorkPosition()
             {
@@ -107,7 +111,7 @@ namespace BLL
             };
             return dTODalWorkPosition;
         }
-        public static BllServices ConvertServicesToBll(Service dTODalService)
+        public  BllServices ConvertServicesToBll(Service dTODalService)
         {
             BllServices bllServices = new BllServices()
             {
@@ -117,7 +121,7 @@ namespace BLL
             };
             return bllServices;
         }
-        public static Service ConvertServicesToDTO(BllServices bllServices)
+        public  Service ConvertServicesToDTO(BllServices bllServices)
         {
             Service dTODalService = new Service()
             {
@@ -127,7 +131,7 @@ namespace BLL
             };
             return dTODalService;
         }
-        public static BllBalsam ConvertBalsamToBll(Balsam Balsam)
+        public  BllBalsam ConvertBalsamToBll(Balsam Balsam)
         {
             BllBalsam bllBalsam = new BllBalsam()
             {
@@ -143,7 +147,7 @@ namespace BLL
 
             return bllBalsam;
         }
-        public static Balsam ConvertBalsamToDTO(BllBalsam bllBalsam)
+        public  Balsam ConvertBalsamToDTO(BllBalsam bllBalsam)
         {
             Balsam dTOBalsam = new Balsam()
             {
@@ -159,7 +163,7 @@ namespace BLL
 
             return dTOBalsam;
         }
-        public static BllColor ConvertColorToBll(HairColor dTOColor)
+        public  BllColor ConvertColorToBll(HairColor dTOColor)
         {
             BllColor bllColor = new BllColor()
             {
@@ -176,7 +180,7 @@ namespace BLL
             };
             return bllColor;
         }
-        public static HairColor ConvertColorToDTO(BllColor bllColor)
+        public  HairColor ConvertColorToDTO(BllColor bllColor)
         {
             HairColor dTOColor = new HairColor()
             {
@@ -194,7 +198,7 @@ namespace BLL
 
             return dTOColor;
         }
-        public static BllFoundation ConvertFoundationToBll(Foundation dTOFoundation)
+        public  BllFoundation ConvertFoundationToBll(Foundation dTOFoundation)
         {
             BllFoundation bllFoundation = new BllFoundation()
             {
@@ -212,7 +216,7 @@ namespace BLL
 
             return bllFoundation;
         }
-        public static Foundation ConvertFoundationToDTO(BllFoundation bllFoundation)
+        public  Foundation ConvertFoundationToDTO(BllFoundation bllFoundation)
         {
             Foundation dTOFoundation = new Foundation()
             {
@@ -230,7 +234,7 @@ namespace BLL
 
             return dTOFoundation;
         }
-        public static BllLaque ConvertLaqueToBll(Laque dTOLaque)
+        public  BllLaque ConvertLaqueToBll(Laque dTOLaque)
         {
             BllLaque bllLaque = new BllLaque()
             {
@@ -246,7 +250,7 @@ namespace BLL
 
             return bllLaque;
         }
-        public static Laque ConvertLaqueToDTO(BllLaque bllLaque)
+        public  Laque ConvertLaqueToDTO(BllLaque bllLaque)
         {
             Laque dTOLaque = new Laque()
             {
@@ -262,7 +266,7 @@ namespace BLL
 
             return dTOLaque;
         }
-        public static BllLipstick ConvertLipstickToBLL(Lipstick dTOLipstick)
+        public  BllLipstick ConvertLipstickToBLL(Lipstick dTOLipstick)
         {
             BllLipstick bllLipstick = new BllLipstick()
             {
@@ -280,7 +284,7 @@ namespace BLL
 
             return bllLipstick;
         }
-        public static Lipstick ConvertLipstickToDTO(BllLipstick bllLipstick)
+        public  Lipstick ConvertLipstickToDTO(BllLipstick bllLipstick)
         {
             Lipstick dTOLipstick = new Lipstick()
             {
@@ -297,7 +301,7 @@ namespace BLL
             };
             return dTOLipstick;
         }
-        public static BllMascara ConvertMascaraToBll(Mascara dTOMascara)
+        public  BllMascara ConvertMascaraToBll(Mascara dTOMascara)
         {
             BllMascara bllMascara = new BllMascara()
             {
@@ -314,7 +318,7 @@ namespace BLL
 
             return bllMascara;
         }
-        public static Mascara ConvertMascaraToDTO(BllMascara bllMascara)
+        public  Mascara ConvertMascaraToDTO(BllMascara bllMascara)
         {
             Mascara dTOMascara = new Mascara()
             {
@@ -331,7 +335,7 @@ namespace BLL
 
             return dTOMascara;
         }
-        public static BllNailBase ConvertBaseToBll(NailBase dTONailBase)
+        public  BllNailBase ConvertBaseToBll(NailBase dTONailBase)
         {
             BllNailBase bllNailBase = new BllNailBase()
             {
@@ -347,7 +351,7 @@ namespace BLL
 
             return bllNailBase;
         }
-        public static NailBase ConvertBaseToDTO(BllNailBase bllNailBase)
+        public  NailBase ConvertBaseToDTO(BllNailBase bllNailBase)
         {
             NailBase dTONailBase = new NailBase()
             {
@@ -363,7 +367,7 @@ namespace BLL
 
             return dTONailBase;
         }
-        public static BllNailPolish ConvertPolishToBLL(NailPolish dTOPolish)
+        public  BllNailPolish ConvertPolishToBLL(NailPolish dTOPolish)
         {
             BllNailPolish bllNailPolish = new BllNailPolish()
             {
@@ -380,7 +384,7 @@ namespace BLL
 
             return bllNailPolish;
         }
-        public static NailPolish ConvertPolishToDTO(BllNailPolish bllNailPolish)
+        public  NailPolish ConvertPolishToDTO(BllNailPolish bllNailPolish)
         {
             NailPolish dTOPolish = new NailPolish()
             {
@@ -397,7 +401,7 @@ namespace BLL
 
             return dTOPolish;
         }
-        public static BllNailTop ConvertTopTOBLL(NailTop dTONailTop)
+        public  BllNailTop ConvertTopTOBLL(NailTop dTONailTop)
         {
             BllNailTop bllNailTop = new BllNailTop()
             {
@@ -413,7 +417,7 @@ namespace BLL
 
             return bllNailTop;
         }
-        public static NailTop ConvertTopToDTO(BllNailTop bllNailTop)
+        public  NailTop ConvertTopToDTO(BllNailTop bllNailTop)
         {
             NailTop dTONailTop = new NailTop()
             {
@@ -429,7 +433,7 @@ namespace BLL
 
             return dTONailTop;
         }
-        public static BllPowder ConvertPowderToBll(Powder dTOPowder)
+        public  BllPowder ConvertPowderToBll(Powder dTOPowder)
         {
             BllPowder bllPowder = new BllPowder()
             {
@@ -446,7 +450,7 @@ namespace BLL
 
             return bllPowder;
         }
-        public static Powder ConvertPowderToDTO(BllPowder bllPowder)
+        public  Powder ConvertPowderToDTO(BllPowder bllPowder)
         {
             Powder dTOPowder = new Powder()
             {
@@ -463,7 +467,7 @@ namespace BLL
 
             return dTOPowder;
         }
-        public static BllShadows ConvertShadowToBll(Shadows dTOShadows)
+        public  BllShadows ConvertShadowToBll(Shadows dTOShadows)
         {
             BllShadows bllShadows = new BllShadows()
             {
@@ -480,7 +484,7 @@ namespace BLL
 
             return bllShadows;
         }
-        public static Shadows ConvertShadowToDTO(BllShadows bllShadows)
+        public  Shadows ConvertShadowToDTO(BllShadows bllShadows)
         {
             Shadows dTOShadows = new Shadows()
             {
@@ -497,7 +501,7 @@ namespace BLL
 
             return dTOShadows;
         }
-        public static BllShampoo ConvertShampoToBLL(Shampoo dTOShampoo)
+        public  BllShampoo ConvertShampoToBLL(Shampoo dTOShampoo)
         {
             BllShampoo bllShampoo = new BllShampoo()
             {
@@ -514,7 +518,7 @@ namespace BLL
 
             return bllShampoo;
         }
-        public static Shampoo ConvertShampooToDTO(BllShampoo bllShampoo)
+        public  Shampoo ConvertShampooToDTO(BllShampoo bllShampoo)
         {
             Shampoo dTOShampoo = new Shampoo()
             {
@@ -531,7 +535,7 @@ namespace BLL
             return dTOShampoo;
         }
 
-        public static BllMaterials ConvertBllMaterials(Material tmpMaterial)
+        public  BllMaterials ConvertBllMaterials(Material tmpMaterial)
         {
             BllMaterials getmaterial = null;
             if (tmpMaterial is Balsam)
@@ -585,72 +589,59 @@ namespace BLL
             return getmaterial;
         }
 
-        public static Material ConvertMaterialsToDB(BllMaterials tmpMaterial)
+        public  Material ConvertMaterialsToDB(BllMaterials tmpMaterial)
         {
-            GetFunctionDal dal = new GetFunctionDal();
-
+            
             Material getmaterial = null;
             if (tmpMaterial is BllBalsam)
             {
-               // GetFunctionDal dal = new GetFunctionDal();
                 getmaterial = ConvertBalsamToDTO(tmpMaterial as BllBalsam);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is BllShampoo)
             {
                 getmaterial = ConvertShampooToDTO(tmpMaterial as BllShampoo);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is BllLaque)
             {
                 getmaterial = ConvertLaqueToDTO(tmpMaterial as BllLaque);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "HairCut" || x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is BllColor)
             {
                 getmaterial = ConvertColorToDTO(tmpMaterial as BllColor);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "HairColoring").ToList();
             }
             else if (tmpMaterial is BllPowder)
             {
                 getmaterial = ConvertPowderToDTO(tmpMaterial as BllPowder);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllFoundation)
             {
                 getmaterial = ConvertFoundationToDTO(tmpMaterial as BllFoundation);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllMascara)
             {
                 getmaterial = ConvertMascaraToDTO(tmpMaterial as BllMascara);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllLipstick)
             {
                 getmaterial = ConvertLipstickToDTO(tmpMaterial as BllLipstick);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllShadows)
             {
                 getmaterial = ConvertShadowToDTO(tmpMaterial as BllShadows);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "MakeUp").ToList();
             }
             else if (tmpMaterial is BllNailBase)
             {
                 getmaterial = ConvertBaseToDTO(tmpMaterial as BllNailBase);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "Manicure").ToList();
             }
             else if (tmpMaterial is BllNailTop)
             {
                 getmaterial = ConvertTopToDTO(tmpMaterial as BllNailTop);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "Manicure").ToList();
             }
             else if (tmpMaterial is BllNailPolish)
             {
                 getmaterial = ConvertPolishToDTO(tmpMaterial as BllNailPolish);
-                getmaterial.Service = dal.getServices().Where(x => x.Name == "Manicure").ToList();
             }
+            getmaterial.WriteOffMaterials = new List<WriteOffMaterial>();
             return getmaterial;
         }
 

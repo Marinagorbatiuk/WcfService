@@ -11,8 +11,6 @@ namespace Dal
         void AddUser(Staff dTODallStaff);
         List<string> WritingOff(List<WriteOffMaterial> writeOffMaterials);
         void AddMaterialToDB(Material material);
-      //void AddBalsamToDB(Balsam balsam);
-      //  void AddColorToDB(HairColor Color);
-       // void Delete(int id);
+     
     }
 }

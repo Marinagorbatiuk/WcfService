@@ -63,10 +63,20 @@ namespace WcfService.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IDalAdd>().To<AddFunctionDal>();
             kernel.Bind<DbContext>().To<ModelBeauty>();
+            kernel.Bind<IDalAdd>().To<AddFunctionDal>();
             kernel.Bind<IBllAdd>().To<AddFunctions>();
             kernel.Bind<IWCFAdd>().To<AddFunctionWCF>();
+            kernel.Bind<IDalDelete>().To<DeleteFunctionDal>();
+            kernel.Bind<IBllDelete>().To<DeleteFunctions>();
+            kernel.Bind<IWCFDelete>().To<DeleteFunctionWCF>();
+            kernel.Bind<IDalGet>().To<GetFunctionDal>();
+            kernel.Bind<IBllGet>().To<GetFunctions>();
+            kernel.Bind<IWCFGet>().To<GetFunctionWCF>();
+            kernel.Bind<IDalUpdate>().To<UpdateFunctionDal>();
+            kernel.Bind<IBllUpdate>().To<UpdateFunctions>();
+            kernel.Bind<IWCFUpdate>().To<UpdateFunctionWCF>();
+            kernel.Bind<IConvertationBll>().To<ConvertationsBLL>();
         }        
     }
 }

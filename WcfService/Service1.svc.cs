@@ -14,12 +14,18 @@ namespace WcfService
     {
         // AddFunctionWCF addFunctionWCF = new AddFunctionWCF();
         IWCFAdd addFunctionWCF;
-        DeleteFunctionWCF deleteFunctionWCF = new DeleteFunctionWCF();
-        GetFunctionWCF getFunctionWCF = new GetFunctionWCF();
-        UpdateFunctionWCF updateFunctionWCF = new UpdateFunctionWCF();
-        public Service1(IWCFAdd wCFAdd)
+        IWCFDelete deleteFunctionWCF;
+        IWCFGet getFunctionWCF;
+        IWCFUpdate updateFunctionWCF;
+        //DeleteFunctionWCF deleteFunctionWCF = new DeleteFunctionWCF();
+        //GetFunctionWCF getFunctionWCF = new GetFunctionWCF();
+        //UpdateFunctionWCF updateFunctionWCF = new UpdateFunctionWCF();
+        public Service1(IWCFAdd wCFAdd, IWCFDelete delete, IWCFGet get, IWCFUpdate update)
         {
             addFunctionWCF = wCFAdd;
+            deleteFunctionWCF = delete;
+            getFunctionWCF = get;
+            updateFunctionWCF = update;
         }
         public void AddMaterials(MaterialsWCF materialsWCF)
         {

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WcfService
 {
-    interface IWCFUpdate
+  public  interface IWCFUpdate
     {
+      void  UpdateMaterials(MaterialsWCF materialsWCF);
     }
 }

@@ -8,7 +8,11 @@ namespace BLL
 {
  public   class DeleteFunctions:IBllDelete
     {
-        DeleteFunctionDal function = new DeleteFunctionDal();
+        IDalDelete function;
+        public DeleteFunctions(IDalDelete dalDelete)
+        {
+            function = dalDelete;
+        }
         public void DeleteEmployee(int id)
         {
             function.DeleteUser(id);

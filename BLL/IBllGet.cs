@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    interface IBllGet
+  public  interface IBllGet
     {
         ICollection<BllInfo> GetLoggs();
         void GetChangedQuantity(int QuantityBottles, double QuantityGeneralVolume, int id);
@@ -14,6 +14,6 @@ namespace BLL
         List<BllMaterials> GetListMaterials();
         List<BllStaff> GetEmployees();
         List<BllServices> GetListServices();
-
+        BllStaff GetUserAutorization(string login, string password);
     }
 }

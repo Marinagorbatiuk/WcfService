@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    interface IBllDelete
+   public interface IBllDelete
     {
         void DeleteEmployee(int id);
         void DeleteProduct(int id);

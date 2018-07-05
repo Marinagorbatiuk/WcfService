@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    interface IBllUpdate
+   public interface IBllUpdate
     {
         void UpdateMaterial(BllMaterials bllMaterials);
     }

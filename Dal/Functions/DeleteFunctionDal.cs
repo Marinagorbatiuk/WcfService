@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,11 @@ namespace Dal
 {
  public   class DeleteFunctionDal:IDalDelete 
     {
-        ModelBeauty model = new ModelBeauty();
+        DbContext model;
+        public DeleteFunctionDal(DbContext context)
+        {
+            model = context;
+        }
         public void Delete(int id)
         {
             Logger.WriteLog(
@@ -16,12 +21,12 @@ namespace Dal
                 {
                     Action = "Material has been deleted",
                     ActionTime = DateTime.Now,
-                    InputParameters = model.Materials.First(x => x.Id == id).Name,
-                    OutputParameters =  $"The { model.Materials.First(x => x.Id == id).Name} has been deleted "
+                    InputParameters = model.Set<Material>().First(x => x.Id == id).Name,
+                    OutputParameters =  $"The { model.Set<Material>().First(x => x.Id == id).Name} has been deleted "
 
                 }
                 );
-                model.Materials.Remove(model.Materials.Where(x => x.Id == id).First());
+                model.Set<Material>().Remove(model.Set<Material>().Where(x => x.Id == id).First());
                 model.SaveChanges();
         }
 
@@ -32,12 +37,12 @@ namespace Dal
                 {
                     Action = "User has been deleted",
                     ActionTime = DateTime.Now,
-                    InputParameters = "Login - "+model.Staffs.First(x => x.Id == id).Login,
-                    OutputParameters = $"The user with login {model.Staffs.First(x => x.Id == id).Login} has been deleted "
+                    InputParameters = "Login - "+model.Set<Staff>().First(x => x.Id == id).Login,
+                    OutputParameters = $"The user with login {model.Set<Staff>().First(x => x.Id == id).Login} has been deleted "
 
                 }
                 );
-            model.Staffs.Remove(model.Staffs.Where(x => x.Id == id).First());
+            model.Set<Staff>().Remove(model.Set<Staff>().Where(x => x.Id == id).First());
                 model.SaveChanges();
         }
     }

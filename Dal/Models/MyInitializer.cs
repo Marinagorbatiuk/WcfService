@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Dal
 {
-    internal class MyInitializer<T> : DropCreateDatabaseAlways<ModelBeauty>
+    internal class MyInitializer<T> : DropCreateDatabaseIfModelChanges<ModelBeauty>
     //CreateDatabaseIfNotExists
     //DropCreateDatabaseAlways
     {
